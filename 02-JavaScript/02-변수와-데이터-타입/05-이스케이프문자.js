@@ -47,6 +47,6 @@ console.groupEnd();
 
 const student = "자바스크립트학생";
 const age = 20;
-console.group("복합사용");
+console.group("복합사용"); 
     console.log("%s님의 나이는 %d세 입니다.", student, age);
 console.groupEnd();
