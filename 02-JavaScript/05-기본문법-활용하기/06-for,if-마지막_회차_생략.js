@@ -20,6 +20,18 @@ for (let i = 1; i <= 9; i++) {
 console.groupEnd();
 
 
+console.group("변수 <= 최대값")
+
+for (let i = 1; i <= 9; i++) {
+    if (i + 1 <= 9) {
+        console.log(i);
+    }
+}
+
+console.groupEnd();
+
+
+
 console.group("글자 사이에 콤마(,) 넣기");
 
 let str = "";

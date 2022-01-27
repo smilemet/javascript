@@ -1,11 +1,8 @@
-const 국어 = "B"
+let x = 0;
 
-if(국어 == "A") {
-	console.log("A학점 입니다.");
-} else if (국어 == "B") {
-	console.log("B학점 입니다.");
-} else if (국어 == "C") {
-	console.log("C학점 입니다.");
-} else {
-	console.log("C학점 미만 입니다.");
-} 
+for (let i = 1; i < 6; i++) {
+	let j = 6-i;
+	console.log("[ %d, %d ]", i, j);
+	x++;
+}
+console.log("경우의 수는 %d개 입니다.", x);
