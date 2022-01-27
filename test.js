@@ -1,8 +1,8 @@
-let x = 0;
+let y = 1;
 
-for (let i = 1; i < 6; i++) {
-	let j = 6-i;
-	console.log("[ %d, %d ]", i, j);
-	x++;
+while(y < 10) {
+    const z = 7*y
+    console.log("7 x %d = %d", y, z);
+
+    y++; 
 }
-console.log("경우의 수는 %d개 입니다.", x);
