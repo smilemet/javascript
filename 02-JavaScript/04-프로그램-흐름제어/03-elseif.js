@@ -1,5 +1,5 @@
 const point = 72;
-
+ 
 if (point > 90) {
     console.log("A학점");
 } else if (point > 80) {
