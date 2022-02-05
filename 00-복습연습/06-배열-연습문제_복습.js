@@ -88,40 +88,67 @@
 
 
 
-// 9번 문제, 10번 문제
-let student = ["둘리", "도우너", "또치", "희동"];
-let grade = [
-    [78, 89, 96],
-    [62, 77, 67],
-    [54, 90, 80],
-    [100, 99, 98]
-]
-let sum = 0, avg = 0;
-let class_avg = 0;
+// // 9번 문제, 10번 문제
+// let student = ["둘리", "도우너", "또치", "희동"];
+// let grade = [
+//     [78, 89, 96],
+//     [62, 77, 67],
+//     [54, 90, 80],
+//     [100, 99, 98]
+// ]
+// let sum = 0, avg = 0;
+// let class_avg = 0;
 
-for (let i = 0; i < grade.length; i++) {
-    sum = 0;
-    for (j of grade[i]) {
-        sum += j;
+// for (let i = 0; i < grade.length; i++) {
+//     sum = 0;
+//     for (j of grade[i]) {
+//         sum += j;
+//     }
+//     avg = sum / grade[i].length;
+//     class_avg += avg
+//     avg = avg.toFixed(2);
+//     console.log("%s 총점: %d점, 평균: %d점", student[i], sum, avg);
+// }
+// console.log("반 평균 = %d점", class_avg/grade.length);
+
+
+
+// // 11번 문제
+// let item = [
+//     [500, 291],
+//     [320, 586],
+//     [100, 460],
+//     [120, 558],
+//     [92, 18],
+//     [30, 72]
+// ]
+// let money = 0;
+
+// for (let i = 0; i < item.length; i++) {
+//     money += item[i][0]*item[i][1]*0.9;
+// }
+
+// console.log(money);
+
+
+
+// 12번 문제
+
+let ssn = [0,1,1,2,1,3,1,0,0,0,1,2,3];
+let sum = 0;
+
+for (let i = 0, j = 2; i < ssn.length - 1; i++, j++) {
+    if (j < 10) {
+        sum += j*ssn[i];
+    } else {
+        sum += (j-8)*ssn[i];
     }
-    avg = sum / grade[i].length;
-    class_avg += avg
-    avg = avg.toFixed(2);
-    console.log("%s 총점: %d점, 평균: %d점", student[i], sum, avg);
 }
-console.log("반 평균 = %d점", class_avg/grade.length);
 
+sum = (11-(sum % 11)) % 10
 
-
-// 11번 문제
-let price = [500, 320, 100, 120, 92, 30];
-let qty = [291, 586, 460, 558, 18, 72];
-
-let item = [
-    [500, 291],
-    [320, 586],
-    [100, 460],
-    [120, 558],
-    [92, 18],
-    [30, 72]
-]
+if(sum % 10 === ssn[12]) {
+    console.log("유효")
+} else {
+    console.log("무효")
+}

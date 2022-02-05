@@ -37,6 +37,17 @@ for (let i = 0; i < classRoom.student.length; i++) {
     console.log(" >> 이름: " + classRoom.student[i].name);
     console.groupEnd();
 }
+/*
+0번째 학생
+   >> 학번: 10101
+   >> 학년: 1
+   >> 이름: 학생1
+1번째 학생
+   >> 학번: 20202
+   >> 학년: 2
+   >> 이름: 학생2
+*/
+
 
 // for~of문을 사용할 경우 몇 번째 항목인지를 알기 위해
 // 반복문 시작 전 별도의 초기식과 반복문 안에 별도의 증감식 추가
@@ -49,3 +60,13 @@ for (const s of classRoom.student) {
     console.groupEnd();
     i++;
 }
+/*
+0번째 학생
+   >> 학번: 10101
+   >> 학년: 1
+   >> 이름: 학생1
+1번째 학생
+   >> 학번: 20202
+   >> 학년: 2
+   >> 이름: 학생2
+*/
