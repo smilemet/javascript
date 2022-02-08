@@ -1,12 +1,5 @@
 // 1번
-function printStar(max) {
-    let str = "";
-    for (let i = 0; i < max; i++) {
-        str += "*"
-        console.log(str);
-    }
-}
-printStar(5);
+
 
 
 // 2번
