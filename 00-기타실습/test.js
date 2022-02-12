@@ -1,38 +1,35 @@
-class Member {
-    constructor(camp, name, hp, mp, dps) {
-        this._camp = camp;
-        this._name = name;
-        this._hp = hp;
-        this._mp = mp;
-        this._dps = dps;
-        console.log(
-            `${this._camp} 진영 | ${this._name} | 체력 ${this._hp} | 마나 ${this._mp} | 공격력 ${this._dps} `)
-    }
+// const calander = new Array(6)
 
-    move(position) {
-        console.log(`${this._camp} 소속 ${this._name}(이)가 ${position}(으)로 이동했습니다.`);   
-    }
+// for (let i = 0; i < calander.length; i++) {
+//     calander[i] = new Array(7);
+// }
 
-    attack(target) {
-        console.log(`${this._name}(이)가 ${target}(을)를 공격합니다. 데미지 ${this._dps}`)
-    }
-}
+// console.log(calander);
+
+// let count = 1
+// for (let i = 0; i < calander.length; i++) {
+//     for (let j = 0; j < calander[i].length; j++) {
+//         if(i === 0 && j < 3 || count > 30 ) {
+//             calander[i][j] = 0;
+//         } else {
+//             calander[i][j] = count;
+//             count++;
+//         }
+//     }
+// }
+
+// console.log(calander);
+
+// for (let i = 0; i < calander.length; i++) {
+//     let str = '';
+//     for (let j = 0; j < calander[i].length; j++) {
+//         if(calander[i][j] === 0) {
+//             str += '\t';
+//         } else {
+//             str += calander[i][j] + '\t'; 
+//         }
+//     }
+//     console.log(str)
+// }
 
 
-class 근딜 extends Member {
-    melee(target) {
-        console.log(` >>>>> 강타!!`);
-        this.attack(target);
-    }
-}
-
-class 원딜 extends Member {
-    adCarry(target) {
-        console.log(` >>>>> 연격!!`);
-        this.attack(target);
-    }
-}
-
-const Maemel = new 근딜('일산', 'ㅎㅎ', 99999, 99999, 99999);
-Maemel.move('남양주');
-Maemel.melee('ㅁㅁ');

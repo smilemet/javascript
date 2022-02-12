@@ -1,8 +1,10 @@
 "use strict";
 
 /* 1) 변수의 선언과 할당 */
+// 변수의 선언
 var myNumber1;
 
+// 할당
 myNumber1 = 100;
 console.log(myNumber1);
 
@@ -13,6 +15,7 @@ console.log(myNumber2);
 
 
 /* 3) 변수값 변경하기 */
+// 한 번 만들어진 변수는 다른 값으로 교체 가능
 var myNumber2 = 456;
 console.log(myNumber2);
 

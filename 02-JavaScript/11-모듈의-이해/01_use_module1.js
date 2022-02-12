@@ -8,10 +8,3 @@ const my = require('./MyModule1');
 
 // 모듈형태로 참조된 함수를 호출한다.
 my();
-
-
-const calander = new Array(6)
-
-for (a of calander) {
-    a = new Array(7);
-}
