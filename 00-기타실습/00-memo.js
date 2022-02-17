@@ -1,14 +1,26 @@
-const object1 = {};
+class Person {
+    constructor(name, first, second) {
+        this._name = name;
+        this._first = first;
+        this._second = second;
+    }
+    sum() {
+        return this._first + this._second;
+    }
+}
 
-Object.defineProperty(object1, 'property1', {
-  value: 42,
-  writable: false
-});
+class PersonPlus extends Person {
+    constructor(name, first, second, third) {
+        super(name, first, second); // super이 부모 속성 구현하는 경우
+        this._third = third;
+    }
+    sum() {
+        return super.sum() + this._third;
+    }
+}
 
-console.log(object1);
+let kim = new PersonPlus('kim', 10, 20, 30);
+console.log(`kim, ${kim.sum()}`);
 
-object1.property1 = 77;
-// throws an error in strict mode
 
-console.log(object1.property1);
-// expected output: 42
+cla

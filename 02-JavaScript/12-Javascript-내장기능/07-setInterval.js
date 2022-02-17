@@ -2,7 +2,7 @@
  * setInterval(func, int)
  * 
  * 지정된 함수를 두 번째 인자로 전달된 시간마다 한 번씩 호출한다. (타이머기능)
- * setInterval() d이후의 처리 로직들은 func의 실행 여부와 상관없이 즉시 실행된다.
+ * setInterval() 이후의 처리 로직들은 func의 실행 여부와 상관없이 즉시 실행된다.
  * 
  * 타이머를 종료시킬 수 있는 timerid를 반환한다.
  * 이 값을 clearInterval()함수에 전달하면 타이머가 종료된다.

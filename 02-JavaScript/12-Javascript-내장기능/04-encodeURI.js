@@ -4,12 +4,13 @@
  * 주어진 문자열을 URL에 포함시키기에 적절한 형태로 변환(=인코딩)하는 처리
  * 인코딩하지 않는 문자
  *   A-Z a-z 0-9 ; , / ? : @ & = + $ - _ . ! - * ' ( ) #
+ * use it to fix up broken URIs if you can't fix them beforehand
  */
 
 // 주소창에 한글이 있으면 변환함
 
 const set1 = ';,/?:@&=+$#'; // 예약 문자
-const set2 = "-_.!~*'()'"; // 비 예약 문자
+const set2 = "-_.!~*'()"; // 비 예약 문자
 const set3 = 'ABC abc 123' // 알파벳 및 숫자, 공백
 const set4 = '자바스크립트'
 
