@@ -1,26 +1,14 @@
-class Person {
-    constructor(name, first, second) {
-        this._name = name;
-        this._first = first;
-        this._second = second;
-    }
-    sum() {
-        return this._first + this._second;
-    }
-}
+const year = 2022
+let age = year - 2000 + 1
 
-class PersonPlus extends Person {
-    constructor(name, first, second, third) {
-        super(name, first, second); // super이 부모 속성 구현하는 경우
-        this._third = third;
-    }
-    sum() {
-        return super.sum() + this._third;
-    }
-}
-
-let kim = new PersonPlus('kim', 10, 20, 30);
-console.log(`kim, ${kim.sum()}`);
+console.log(`나는 ${age}세 입니다.`)
 
 
-cla
+const age2 = 31
+let year2 = 2022 - age2 + 1;
+console.log(`나는 ${year2}년도에 태어났습니다.`)
+
+const numOfApples = 123;
+
+let basket = Math.ceil(numOfApples / 10);
+console.log(basket)

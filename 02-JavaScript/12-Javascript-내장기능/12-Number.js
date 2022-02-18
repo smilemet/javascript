@@ -36,7 +36,7 @@ console.log(Number.MIN_VALUE); // 5e-324
 
 // 숫자가 아님을 나타내는 특별한 값
 console.log(Number.NaN); // NaN
-console.log(isNaN(Number.NaN)); // true
+console.log(isNaN(Number.NaN)); // true                                                    
 
 
 // (정적)메서드
