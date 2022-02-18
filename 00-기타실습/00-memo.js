@@ -1,14 +1,16 @@
-const year = 2022
-let age = year - 2000 + 1
+const k = 0;
 
-console.log(`나는 ${age}세 입니다.`)
+if (k > 1 && k < 10) {
+    for (let i = 1; i < 10; i++) {
+        console.log(`${k} x ${i} = ${k*i}`);
+    }
+} else {
+    console.log('2~9 사이의 수식만 출력합니다.')
+}
 
 
-const age2 = 31
-let year2 = 2022 - age2 + 1;
-console.log(`나는 ${year2}년도에 태어났습니다.`)
+let a = [1, 2, 3]
 
-const numOfApples = 123;
+a[3] = 4
 
-let basket = Math.ceil(numOfApples / 10);
-console.log(basket)
+console.log(a)

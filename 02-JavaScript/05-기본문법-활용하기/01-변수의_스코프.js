@@ -25,7 +25,7 @@ if(true) {
     let num4 = num3 + 100;
     console.log("블록 안: " + num4);
 }
-console.log("블록 밖: " + num4);
+// console.log("블록 밖: " + num4);
 
 // 블록 밖에서 생성된 변수를 블록 안에서 사용 가능
 // let으로 선언된 변수는 if문의 실행 여부와 상관없이 블록을 빠져나올 수 없다

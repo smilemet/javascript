@@ -8,5 +8,5 @@ while (true) {
     if (y > 10) {
         break;
     }
+    console.log("Hello World ::: %d", y);
 }
-console.log("Hello World ::: %d", y);
