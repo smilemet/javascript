@@ -15,7 +15,7 @@ for(let i = 0; i < grade.length; i++) {
         p_sum += grade[i][j];
     }
 
-    const p_avg = p_sum / grade[i].length - 1;
+    const p_avg = p_sum / (grade[i].length - 1);
     console.log("%s의 과목 총점 = %d, 평균 = %d", grade[i][0], p_sum, p_avg)
 }
 
