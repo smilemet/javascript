@@ -17,7 +17,7 @@ printRevStar(5);
 
 // 3번
 function myGame(n) {
-    for(let i = 0, i < n + 1, i++) {
+    for(let i = 0; i < n + 1; i++) {
         let count = 1;
         if(n % 3 === 0) {
             while(parseInt(n / 10) !== 0) {
@@ -38,7 +38,7 @@ myGame(35);
 //         const str = i + "";
 //         console.group(i);
 
-//         for (let jof str) { 
+//         for (let j of str) { 
 //             console.log(j);
         
 //             if (j === ("3" || "6" || "9" ) {

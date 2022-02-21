@@ -6,6 +6,10 @@ class RegexHelper {
      */
     kor(input, msg) {
         const pattern1 = /^[ㄱ-ㅎ가-힣]*$/;
+        //username이 pattern1 정규식에 부합하지 않는다면?
+        if (!pattern1.test(input)) {
+            throw new BadRequestException(msg);
+        }
     }
 
     /** 
