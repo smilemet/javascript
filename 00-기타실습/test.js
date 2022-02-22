@@ -1,6 +1,3 @@
-const ssn = '020517-3******'
-const now_year = '2022';
+arr = [1, 2, 3, 4, 5]
 
-const year = ssn.substring(0, 2);
-const month = ssn.substring(2, 4);
-const date = ssn.substring(4, 6);
+console.log(Math.max(arr.forEach((v) => v)))
