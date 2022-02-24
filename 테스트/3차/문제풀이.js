@@ -135,14 +135,65 @@ class Student {
     }
 }
 
+
+
+
+class Student {
+    constructor() {
+        this.grade = new Array();
+    }
+
+    set _grade(value) {
+        this.grade.push(value);
+    }
+
+    getSumAvg() {
+        let sum = 0
+        this.grade.forEach((v) => {
+            sum += v;
+        })
+        let avg = sum / this.grade.length;
+        return [sum, avg];
+    }
+
+    getMinMax() {
+        let stumin = this.grade[0];
+        let stumax = this.grade[0];
+        this.grade.forEach((v => {
+            if(stumin > v) {
+                stumin = v
+            }
+        }))
+        this.grade.forEach((v => {
+            if(stumax < v) {
+                stumax = v
+            }
+        }))
+        return {min: stumin, max:stumax};
+    }
+
+    getVar() {
+        let powAll = 0
+        this.grade.forEach((v) => {
+            powAll += Math.pow(v - this.getSumAvg()[1], 2)
+        })
+        return powAll / this.grade.length;
+    }
+
+    getStd() {
+        return Math.sqrt(this.getVar());
+    }
+}
+
+
 // 출력테스트
 const test1 = new Student();
-test1.grade = 82;
-test1.grade = 76;
-test1.grade = 91;
-test1.grade = 98;
-test1.grade = 64;
-console.log(test1._grade)
+test1._grade = 82;
+test1._grade = 76;
+test1._grade = 91;
+test1._grade = 98;
+test1._grade = 64;
+console.log(test1.grade)
 console.log(test1.getSumAvg())
 console.log(test1.getMinMax())
 console.log(test1.getVar())

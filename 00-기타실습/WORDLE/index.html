@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        input {
+            width: 50px;
+            height: 50px;
+            font-size: 40px;
+            text-align: center;
+        }
+    </style>
+    <input class = 'input'>
+    <input class = 'input'>
+    <input class = 'input'>
+    <input class = 'input'>
+    <input class = 'input'>
+    <button>제출</button>
+
+    <script>
+        let answer = 'youns';
+        document.querySelector('button').addEventListener('click', 
+        function() {
+            let input = document.querySelectorAll('.input');
+            // 위치까지 맞으면 초록색
+            // 위치는 틀리면 노란색
+            // 그것들 다 아니면 회색
+
+            for(let i = 0; i < 5; i++) {
+                console.log(i)
+                if (input[i].value === answer[i]) {
+                    input[i].style.background = 'mediumseagreen';
+                } else if (answer.includes(input[i].value)) {
+                    input[i].style.background = 'gold';
+                } else {
+                    input[i].style.background = 'lightgrey';
+                }
+            }
+        })
+    </script>
+</body>
+</html>
