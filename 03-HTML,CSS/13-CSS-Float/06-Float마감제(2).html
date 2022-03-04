@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        #box1,
+        #box2 {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #eee;
+        }
+
+        #box1 {
+            margin: 0 10px 10px 0;
+            float: left;
+        }
+
+        #box2 {
+            margin: 0 0 10px 10px;
+            float: right;
+        }
+
+        #box1 > img,
+        #box2 > img {
+            width: 100%;
+        }
+
+        .clear:after {
+            content: '';
+            display: block;
+            float: none;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="clear">
+        <div id="box1">
+            <img src="img/title.jpg" alt="">
+        </div>
+        <p>웹 표준은 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고</p>
+    </div>
+
+    <div class="clear">
+        <div id="box2">
+            <img src="img/html5.png" alt="">
+        </div>
+        <p>어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고</p>
+        <p>어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고 어쩌고저쩌고</p>
+        <p>어쩌고</p>
+    <div>
+</body>
+</html>

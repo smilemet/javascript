@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    color: #222;
+    font-size: 12px;
+}
+
+/* 링크 밑줄 없애기 */
+a {
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+#gallery {
+    width: 640px;
+    margin: auto;
+}
+
+#gallery li {
+    width: 25%;
+    float: left;
+}
+
+#gallery li a{
+    display: block;
+    width: auto;
+    padding: 10px;
+}
+
+#gallery li a span {
+    display: block;
+    width: auto;
+}
+
+#gallery .thumb img {
+    width: 100%;
+    /* 이거 왜하는거야 */
+    object-fit: cover;
+}
+
+#gallery .text {
+    width: 95%;
+    height: 30px;
+    margin: auto;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+#gallery li a:hover {
+    background-color: #eee;
+}
