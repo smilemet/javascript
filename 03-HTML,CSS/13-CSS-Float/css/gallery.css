@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+/* 모든 여백 삭제, 글꼴 색상/크기 지정 */
 * {
     margin: 0;
     padding: 0;
@@ -12,30 +13,39 @@ a {
     text-decoration: none;
 }
 
+/* 목록 점 없애기 */
 ul, ol {
     list-style: none;
 }
 
+/* 갤러리 폭 지정 */
 #gallery {
     width: 640px;
     margin: auto;
 }
 
+/* 리스트 4열 배치 되도록 설정 */
 #gallery li {
     width: 25%;
     float: left;
 }
 
+/* 여기까지 하면 이미지가 a태그 영역을 뚫고 나간 형태가 됨 
+   각 썸네일 박스 크기가 제멋대로라 제대로 배열되지 않음 */
+/* a태그 영역을 block으로 설정해 이미지를 제대로 포함하게 만듦 */
 #gallery li a{
     display: block;
     width: auto;
     padding: 10px;
 }
 
+/* 이미지와 글귀 각각 block 영역으로 분리 */
 #gallery li a span {
     display: block;
     width: auto;
 }
+
+/* 이미지 박스영역에 꽉 차도록 만들기 */
 
 #gallery .thumb img {
     width: 100%;
@@ -43,6 +53,7 @@ ul, ol {
     object-fit: cover;
 }
 
+/* 텍스트가 그림 폭의 95%만 되도록 조절 */
 #gallery .text {
     width: 95%;
     height: 30px;
