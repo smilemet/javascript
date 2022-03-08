@@ -1,0 +1,143 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: initial;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+header .title {
+    background-color: #1abc9c;
+    text-align: center;
+    color: white;
+    padding: 40px;
+}
+
+header h1 {
+    font-size: 40px;
+}
+
+header p {
+    font-size: 14px;
+}
+
+.nav {
+    /* overflow: hidden; */
+    background-color: #333;
+    position: sticky;
+    top: 0;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 14px 20px;
+    float: left;
+    display: block;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: rgb(151, 151, 151);
+}
+
+nav a:last-child {
+    float: right;
+}
+
+.nav::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+aside {
+    background-color: #e9e9e9;
+    float: left;
+    width: 30%;
+    padding: 20px 10px;
+}
+
+aside h2 {
+    font-size: 18px;
+}
+
+aside p {
+    font-size: 14px;
+}
+
+aside p.subtitle {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.fakeimg {
+    background-color: #b6b6b6;
+    padding: 15px 10px;
+}
+
+aside h3 ~ .fakeimg {
+    margin: 0px 0px 15px 0px;
+}
+
+.container {
+    width : 70%;
+    float: left;
+}
+
+
+main::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+.gallery {
+    list-style: none;
+    padding: 20px;
+}
+
+.gallery li {
+    border-bottom: 1px dotted #ccc;
+    position: relative;
+}
+
+.gallery li:last-child {
+    border-bottom: none;
+}
+
+.gallery .content {
+    position: absolute;
+    top: 20px;
+    left: 90px;
+}
+
+a:last-child {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.thumb {
+    width: 80px;
+    height: 80px;
+}
+
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #ddd;
+}

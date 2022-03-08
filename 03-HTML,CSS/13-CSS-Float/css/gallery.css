@@ -49,7 +49,6 @@ ul, ol {
 
 #gallery .thumb img {
     width: 100%;
-    /* 이거 왜하는거야 */
     object-fit: cover;
 }
 

@@ -4,9 +4,19 @@
     <meta charset="UTF-8" />
     <style>
       div {
-        max-width: 1200px; /* max-width 로 변경 테스트해보기 */
-        background-color: yellow;
-        border: 5px solid red;
+        /* max-width 로 변경 테스트해보기 */
+        /* max-width: 1200px;  */
+        /* background-color: yellow; */
+        /* border: 5px solid red; */
+        display: block;
+        width: auto;
+        /* position: absolute; */
+      }
+
+      #gallery .text {
+        display: block;
+        width: auto;
+        position:absolute;
       }
     </style>
   </head>
@@ -18,5 +28,19 @@
       있겠다는 생각은 있지만, 최근환경에서는 다양한 IT 기술에서 두루 사용이 될
       수 있고, 기본이 되고 있기 때문에, 기본기를 확실하게 다질 수밖에 없습니다.
     </div>
+
+    <ul id="gallery">
+      <li>
+          <a href="#">
+              <span class="thumb">
+                  <img src="img/thumb-01.jpg" alt="이미지1">
+              </span>
+              <span class="text">
+                  <span class="title">바다여행에서의 피부관리 노하우</span>
+                  <span class="desc">자외선 걱정없이 바다여행 즐기기 노하우</span>
+              </span>
+          </a>
+      </li>
+    </ul>
   </body>
 </html>
