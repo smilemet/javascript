@@ -17,6 +17,7 @@ body {
     height: 100%;
 }
 
+
 header .title {
     background-color: #1abc9c;
     text-align: center;
@@ -39,9 +40,11 @@ header p {
     top: 0;
 }
 
+a {
+    text-decoration: none;
+}
 
 nav a {
-    text-decoration: none;
     color: #fff;
     padding: 14px 20px;
     float: left;
@@ -125,7 +128,19 @@ main::after {
     left: 90px;
 }
 
-a:last-child {
+.gallery .content p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.7rem;
+    line-height: 150%;
+}
+
+.gallery .content p.contitle {
+    font-size: 0.8rem;
+}
+
+.gallery a:last-child {
     font-size: 12px;
     font-weight: bold;
 }

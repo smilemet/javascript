@@ -1,46 +1,66 @@
 <!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <style>
-      div {
-        /* max-width 로 변경 테스트해보기 */
-        /* max-width: 1200px;  */
-        /* background-color: yellow; */
-        /* border: 5px solid red; */
-        display: block;
-        width: auto;
-        /* position: absolute; */
-      }
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+    width: 1000px;
+    background-color: #eee;
+    margin: auto;
 
-      #gallery .text {
-        display: block;
-        width: auto;
-        position:absolute;
-      }
-    </style>
-  </head>
-  <body>
-    <div>
-      저는 CSS와 JAVASCRIPT 가 싫습니다. 하지만 인터넷 환경이 시작될 무렵부터,
-      JAVASCRIPT 와 CSS 가 많이 사용된 바람에, 지금은 이런 부분들을 뺄 수가
-      없습니다. 오히려 더 확장하고 있습니다. 새로운 기술을 통해 결국 대체될 수도
-      있겠다는 생각은 있지만, 최근환경에서는 다양한 IT 기술에서 두루 사용이 될
-      수 있고, 기본이 되고 있기 때문에, 기본기를 확실하게 다질 수밖에 없습니다.
+		/* (추가) .logo의 좌표 기준점 설정 */
+		position: relative;
+    height: 150px;
+}
+
+.logo {
+    width: 300px;
+    height: 100px;
+    background-color: #ff6600;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -50px;
+
+}
+
+.side1 {
+    width: 80px;
+    height: 80px;
+    background-color: #ff00ff;
+
+		/* (추가) */
+		position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -240px;
+    margin-top: -40px;
+}
+
+.side2 {
+    width: 80px;
+    height: 80px;
+    background-color: #00ff00;
+
+		/* (추가) */
+		position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: 160px;
+    margin-top: -40px;
+}
+  </style>
+</head>
+<body>
+  <!-- float 사용 안함 -->
+   <div class="container">
+      <div class="logo">logo</div>
+      <div class="side1">side1</div>
+      <div class="side2">side2</div>
     </div>
-
-    <ul id="gallery">
-      <li>
-          <a href="#">
-              <span class="thumb">
-                  <img src="img/thumb-01.jpg" alt="이미지1">
-              </span>
-              <span class="text">
-                  <span class="title">바다여행에서의 피부관리 노하우</span>
-                  <span class="desc">자외선 걱정없이 바다여행 즐기기 노하우</span>
-              </span>
-          </a>
-      </li>
-    </ul>
-  </body>
+</body>
 </html>
