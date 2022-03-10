@@ -7,31 +7,54 @@
     <title>Document</title>
     <style>
         .box {
+            position: absolute;
             display: inline-block;
             width: 250px;
             height: 250px;
         }
 
-        .ratate {
+        .jy {
+            background: url(img/youn.png) no-repeat;
+        }
+
+        .johan {
+            top: 50px;
+            background-position: 30px;
+        }
+
+        .youn {
+            top: 50px;
+            left: 260px;
+            background-position: -220px;
+        }
+        
+        .rotate:hover {
+            transition: transform 1s;
             transform: rotate(360deg);
         }
 
-        .pushleft {
-            float: left;
+        .jump:hover {
+            animation-name: jump;
+            animation-duration: 0.5s;
+            animation-iteration-count: infinite;
         }
 
-        .clearfloat {
-            /* float: none; */
-            clear: both;
+        @keyframes jump {
+            0% {
+                top: 50px;
+            }
+            80% {
+                top: 0px;
+            }
+            100% {
+                top: 50px;
+            }
         }
+
     </style>
 </head>
 <body>
-    <div class="pushleft box">
-        <img src="img/youn.png" alt="johan">
-    </div>
-    <div class="box">
-        <img src="img/youn.png" alt="youn">
-    </div>
+    <div class="jy box johan rotate"></div>
+    <div class="jy box youn jump"></div>
 </body>
 </html>
