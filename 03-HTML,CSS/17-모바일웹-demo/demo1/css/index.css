@@ -1,0 +1,85 @@
+/* 헤더 영역 */
+header {
+    background: url(../img/top_bg.png) no-repeat;
+    height: 165px;
+    position: relative;
+}
+
+header ul {
+    width: 100%;
+    position: absolute;
+    top: 90px;
+    left: 30px;
+}
+
+header li {
+    display: block;
+    margin:5px;
+}
+
+.tel {
+    background: url(../img/btn_tel.png) no-repeat;
+    height: 52px;
+}
+
+.map {
+    background: url(../img/btn_map.png) no-repeat;
+    height: 52px;
+}
+
+
+/* 본문 영역 */
+section ul {
+    background: url(../img/menu.png) no-repeat, url(../img/menu_bg.png);
+}
+
+section li {
+    display: block;
+    height: 46px;
+    width: 100%;
+    background: url(../img/list_right.png) no-repeat right;
+}
+
+
+/* 푸터 영역 */
+footer {
+    background-color: #424141;
+    height: 200px;
+    position: relative;
+}
+
+address {
+    margin: auto;
+    padding: 4%;
+}
+
+footer .btn2 {
+    position: absolute;
+    top: 60px;
+    left: 150px;
+}
+
+footer .btn1 {
+    position: absolute;
+    top: 60px;
+    left: 100px;
+}
+
+
+.info {
+    display: inline-block;
+}
+
+.infotext {
+    display: inline-block;
+    font-size: 12px;
+}
+
+.infotext {
+    color: #ffffff;
+}
+
+address span {
+    color: black;
+    font-weight: bold;
+}
