@@ -46,30 +46,3 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-* {
-    box-sizing: border-box;
-}
-
-.notext {
-    text-indent: -10000px;
-}
-
-.flex {
-    display: flex;
-}
-
-html,
-body {
-    width: 325px;
-	height: 100%;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-.opacity {
-    opacity: 0;
-}

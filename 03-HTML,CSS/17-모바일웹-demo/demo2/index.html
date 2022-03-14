@@ -5,19 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="apple-touch-icon" href="img/icon.png">
+    <link rel="shortcut icon" href="img/icon.png">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <header>
-
+    <header class="flex">
+        <h1>
+            <a href="index.html">
+                <img src="img/logo.png" alt="홈 로고" id="logo">
+            </a>
+        </h1> 
+        <span class="opacity">
+            <a href="index.html">
+                <img src="img/home.jpg" alt="home">
+            </a>
+        </span>
     </header>
     <main>
         <section>
-
+            <h2 class="opacity">편안한 보금자리를 약속합니다. 한강 빌리지</h2>
+            <nav>
+                <ul class="menu flex">
+                    <li class="button1" id="menu1">
+                        <a href="info1.html">
+                            <span class="opacity">분양안내</span>
+                        </a>
+                    </li>
+                    <li class="button1" id="menu2">
+                        <a href="#">
+                            <span class="opacity">프리미엄</span>
+                        </a>
+                    </li>
+                    <li class="button1" id="menu3">
+                        <a href="#">
+                            <span class="opacity">단지안내</span>
+                        </a>
+                    </li>
+                    <li class="button1" id="menu4">
+                        <a href="#">
+                            <span class="opacity">인테리어</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="addr flex">
+                    <li class="button2">
+                        <a href="tel:12345678">
+                            <!-- <img src="img/qlink_call.gif" alt="분양상담전화"> -->
+                            <p class="notext" id="call">분양상담전화</p>
+                        </a>
+                    </li>
+                    <li class="button2">
+                        <a href="#">
+                            <!-- <img src="img/qlink_map.gif" alt="찾아오시는길"> -->
+                            <p class="notext" id="map">찾아오시는길</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </section>
     </main>
     <footer>
-
+        <address>
+            <p>copyright 2014. HANGANG VILLAGE</p>
+        </address>
     </footer>
 </body>
 </html>

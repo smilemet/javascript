@@ -1,1 +1,88 @@
-html
+@charset "utf-8";
+
+/* 헤더 영역 */
+header {
+    height: 49px;
+    background: url(../img/bg_header.gif) repeat-x;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a {
+    height: inherit;   
+    padding: 5%; 
+}
+
+header #logo {
+    
+}
+
+
+/* 본문 영역 */
+main {
+    padding: 0 0 8px 0;
+}
+
+section 
+.menu,
+.addr {
+    justify-content: center;
+}
+
+main h2 {
+    height: auto;
+}
+
+
+nav .button1 {
+    width: 66px;
+    height: 90px;
+    margin: 0 5px 5px 0;
+    background: url(../img/lnb.png) no-repeat;
+}
+
+nav a,
+nav a span {
+    height: inherit;
+}
+
+nav #menu2 {
+    background-position: -66px 0;
+}
+
+nav #menu3 {
+    background-position: -136px 0;
+}
+
+nav #menu4 {
+    background-position: -206px 0;
+}
+
+nav .button2 {
+    width: 146px;
+    height: 36px;
+    margin: 0px 5px;
+    background: url(../img/qlink_call.gif) no-repeat;
+}
+
+nav .addr p {
+    /* height: 36px; */
+    
+}
+
+
+/* 푸터 영역 */
+
+footer {
+    height: 30px;
+    background-color: #c7c7c7;
+    
+}
+
+footer address {
+    text-align: center;
+    font: 11px '굴림';
+    color: #4e4e4e;
+    line-height: 30px;
+}
