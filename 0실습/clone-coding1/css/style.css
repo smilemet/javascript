@@ -1,0 +1,321 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+ul, 
+ol, 
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+}
+
+body {
+    margin: 0 auto;
+
+    font-family: 'Open Sans', sans-serif;
+}
+
+header .inner,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    letter-spacing: 4px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.gray {
+    color: #757575;
+}
+
+hr {
+    border-top: #ccc;
+}
+
+
+/* 헤더 영역 */
+header {
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 5px rgba(155, 155, 155, 0.5);
+}
+
+header .inner {
+    width: 100%;
+    height: 100%;
+    padding: 7px 30px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .inner .title {
+    height: 100%;
+}
+
+header .inner .nav-item {
+    display: none;
+}
+
+header .inner .nav-item li {
+    display: block;
+    height: 100%;
+}
+
+header .inner a {
+    display: block;
+    width: auto;
+    padding: 0 15px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+header .inner a:hover {
+    background-color: #ccc;
+}
+
+
+/* 메인 영역 */
+.section-content {
+    margin: auto;
+    max-width:1100px;
+}
+
+/* 상단 이미지 */
+.section-title {
+    position: relative;
+}
+
+.section-title h1 {
+    position: absolute;
+    left: 25px;
+    bottom: 5px;
+    opacity: 0.6;
+}
+
+.section-title img {
+    max-width: 100%;
+}
+
+
+/* 섹션 공통 */
+main article {
+    padding: 10px 36px;
+}
+
+.section-content > article > div,
+.section-content > article > form {
+    padding: 0 24px;
+}
+
+.section-content h2 {
+    font-size: 33px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-content > article {
+    padding: 72px 0;
+}
+
+
+/* 아티클1 */
+.section-content > #about img {
+    max-width: 100%;
+    opacity: 0.8;
+}
+
+.section-content > #about .left {
+    width: 50%;
+}
+
+.section-content > #about .right {
+    width: 50%;
+}
+
+.section-content #about {
+    display: flex;
+}
+
+.main-container1 .art-title p {
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.main-container1 .art-content p {
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.main-container1 .art-content p.blink {
+    display: none;
+}
+
+.main-container1 .art-content .highlight {
+    display: inline-block;
+    padding: 0 8px;
+    background-color: #f1f1f1;
+}
+
+
+/* 아티클2 */
+.section-content > #menu .left {
+    width: 100%;
+}
+
+.section-content > #menu .right {
+    width: 100%;
+}
+
+
+.section-content #menu {
+    display: block;
+}
+
+.main-container2 h3 {
+    font-size: 18px;
+}
+
+.main-container2 p {
+    font-size: 13px;
+    color:gray
+}
+
+.section-content > #menu img {
+    min-width: 100%;
+    opacity: 0.8;
+}
+
+.main-container2 .menu-item {
+    margin-bottom: 50px;
+}
+
+
+/* 연락처 */
+.contact .art-title h2 {
+    text-align: left;
+}
+
+.contact .art-content p {
+    font-size: 13px;
+    line-height: 25px;
+}
+
+.contact .art-content p.addr {
+    font-size: 16px;
+    font-weight: bolder;
+    color: #607d8b;
+}
+
+
+/* 폼 */
+.contact form input {
+    width: 100%;
+    padding: 16px 0;
+    margin-bottom: 10px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.contact form input::placeholder {
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+button#submit {
+    margin-top: 20px;
+    width: 145px;
+    height: 40px;
+    border: none;
+    font-size: 14px;
+}
+
+
+/* 푸터 영역 */
+footer {
+    width: 100%;
+    height: 115px;
+    background-color: #f1f1f1;
+    text-align: center;
+    line-height: 115px;
+    font-size: 14px;
+}
+
+footer a {
+    text-decoration: underline;
+}
+
+
+/* 미디어쿼리 */
+
+@media only screen and (min-width: 601px) {
+    header .inner .nav-item {
+        display: flex;
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .main-container1 .art-content p.blink {
+        display: block;
+    }
+
+    .section-content #menu {
+        display: flex;
+    }
+
+    .section-content > #menu .left {
+        width: 50%;
+    }
+    
+    .section-content > #menu .right {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 1455px) {
+    main {
+        margin: 0 auto;
+        max-width: 1455px;
+    }
+}
+
+
+/* 
+@media only screen and (min-width: 1455px) {
+    main {
+        margin: 0 auto;
+        max-width: 1455px;
+    }
+}
+
+@media only screen and (min-width: 1455px) {
+    
+} */
+
+/* @media only screen and (max-width: 600px) {
+    
+} */
