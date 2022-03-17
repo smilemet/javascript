@@ -1,3 +1,304 @@
+/* ----------- 기본*/
 * {
     box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+hr {
+    border-top: #f1f1f1;
+}
+
+
+/* ----------- 바디 */
+.inner {
+    margin: 0 auto;
+    max-width: 1580px;
+    padding: 45px 35px;
+}
+
+.page-container {
+    margin: 0 10px;
+}
+
+
+/* ----헤더 영역 */
+header {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(173, 173, 173, 0.8);
+    letter-spacing: 3px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header .head-menu {
+    margin: 8px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .logo {
+    height: 100%;
+    padding: 8px 16px;
+}
+
+header .logo:hover {
+    background-color: #ccc;
+}
+
+header ul.nav {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+header ul.nav li {
+    padding: 8px 16px;
+}
+
+header ul.nav li:hover {
+    background-color: #ccc;
+}
+
+
+/* ----메인 영역 */
+main {
+    width: 100%;
+    /* margin-top: 54.5px; */
+}
+
+.input-item {
+    display: block;
+}
+
+
+/* 상단 이미지 */
+.page-container2 {
+    margin: 0 auto;
+    max-width: 1580px;
+    position: relative;
+}
+
+.page-container2 h1 {
+    color:#fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 3px;
+}
+
+.page-container2 h1 .br {
+    font-weight: bold;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+section.main-title {
+    width: 100%
+}
+
+section .main-title-image img {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+
+/* Project 영역 */
+.main-project hr {
+    margin-bottom: 40px;
+}
+
+.main-project li {
+    margin-bottom: 15px;
+}
+
+.main-project .project-list img {
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.main-project .project-list .list-item {
+    position: relative;
+}
+
+.main-project .project-list .item-name {
+    padding: 12px 20px;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* About 영역 */
+.main-about .section-content {
+    width:100%;
+}
+
+.main-about .section-text {
+    margin-bottom: 50px;
+}
+
+.main-about .figure-item {
+    padding-bottom: 30px;
+}
+
+.main-about .figure-item img {
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.main-about .figure-item .figure-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.main-about .figure-item .figure-department {
+    font-size: 15px;
+    margin: 20px 0;
+}
+
+.main-about .figure-item .figure-tmi {
+    line-height: 1.5rem;
+}
+
+.main-about .figure-item .contact-button {
+    text-align: center;
+    font-weight: bold;
+    padding: 8px 16px;
+    background-color: #f1f1f1;
+}
+
+
+/* Contact 영역 */
+.main-contact form {
+    margin-bottom: 20px;
+}
+
+.main-contact form input {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px 10px;
+    margin-bottom: 15px;
+}
+
+.main-contact form .project-contact {
+    margin-top: 30px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+}
+
+.main-contact form .project-contact:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+/* 메인 하단 영역 */
+.main-footer img {
+    max-width: 100%;
+    min-width: 100%;
+}
+
+
+/* ----푸터 영역 */
+footer {
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    color: #fff;
+    background-color: #000;
+}
+
+footer a {
+    text-decoration: underline;
+}
+
+
+/* ----------- 미디어쿼리 */
+
+@media only screen and (max-width: 600px) {
+    header ul.nav {
+        display: none;
+    }
+
+    .page-container2 h1 .not-br {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+    .main-project .project-list {
+        display: flex;
+        align-content:space-between;
+        flex-wrap: wrap;
+    }
+
+    .main-project .list-item {
+        min-width: 250px;
+        max-width: 47.88%;
+        margin: 0 0.4em 12px 0;
+    }
+
+    .main-about .figure-content {
+        display: flex;
+    }
+
+    .main-about .figure-item {
+        display: inline-block;
+        max-width: 47.61%;
+        margin: 0 0.3em 12px 0;
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .main-project .project-list {
+        display: flex;
+        align-content:space-between;
+        flex-wrap: wrap;
+    }
+
+    .main-project .list-item {
+        /* min-width: 213px; */
+        max-width: 24.5%;
+        margin: 0 0.4em 12px 0;
+    }
+
+    .main-about .figure-content {
+        display: flex;
+    }
+
+    .main-about .figure-item {
+        display: inline-block;
+        max-width: 24.2%;
+        margin: 0 0.3em 12px 0;
+    }
 }

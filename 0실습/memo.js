@@ -1,110 +1,52 @@
-// async & await
+// 기본 데이터 타입
+const num = 123;
+const str = "hello";
+const bool = true;
+
+//추후 살펴보게 될 테이터 타입
+const obj = new Date();            //객체
+const arr = [1, 2, 3];             //배열(객체의 일종)
+const json = {"a": 123, "b": 234}  //JSON (객체의 일종)
+
+console.group("숫자값 출력하기")
+    console.log("숫자값 출력하기 = %d", num);   // 123, 정상
+    console.log("숫자값 출력하기 = %d", str);   // 숫자가 아니므로 NaN
+    console.log("숫자값 출력하기 = %d", bool);  // 1 (0은 거짓, 0 이외의 모든 수는 참. 일반적으로 1을 참으로 처리)
+    console.log("숫자값 출력하기 = %d", obj);   // 객체에 대한 Hash 값 출력
+    console.log("숫자값 출력하기 = %d", arr);   // 숫자가 아니므로 NaN
+    console.log("숫자값 출력하기 = %d", json);  // 숫자가 아니므로 NaN
+console.groupEnd();
+
+console.group("문자열 출력하기")
+    console.log("문자열 출력하기 = %s", num);   // 정상
+    console.log("문자열 출력하기 = %s", str);   // 정상
+    console.log("문자열 출력하기 = %s", bool);  // 정상
+    console.log("문자열 출력하기 = %s", obj);   // 정상
+    console.log("문자열 출력하기 = %s", arr);   // 정상
+    console.log("문자열 출력하기 = %s", json);  // 정상
+console.groupEnd();
+
+console.group("객체 출력하기")
+    console.log("객체 출력하기 = %o", num);   // 정상
+    console.log("객체 출력하기 = %o", str);   // 정상 (따옴표 적용)
+    console.log("객체 출력하기 = %o", bool);  // 정상
+    console.log("객체 출력하기 = %o", obj);   // 정상
+    console.log("객체 출력하기 = %o", arr);   // 정상
+    console.log("객체 출력하기 = %o", json);  // 정상
+console.groupEnd();
+
+console.group("JSON 출력하기")
+    console.log("JSON 출력하기 = %j", num);   // 정상
+    console.log("JSON 출력하기 = %j", str);   // 정상 (따옴표 적용)
+    console.log("JSON 출력하기 = %j", bool);  // 정상
+    console.log("JSON 출력하기 = %j", obj);   // 정상 (따옴표 적용)
+    console.log("JSON 출력하기 = %j", arr);   // 정상
+    console.log("JSON 출력하기 = %j", json);  // 정상
+console.groupEnd();
 
 
-// 1. async
-async function fetchUser() {
-    // 뭔가 오래걸리는 코드...
-    return 'ellie';
-}
-
-const user = fetchUser();
-user.then(console.log);
-console.log(user);
-
-/* 브라우저
-Promise
-[[Prototype]]: Promise
-[[PromiseState]]: "fulfilled"
-[[PromiseResult]]: "ellie"
-*/
-
-
-
-// 2. await
-function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-async function getApple() {
-    await delay(2000);
-    return '🍎';
-}
-
-// function getBanana() {
-//     return delay(3000)
-//     .then(() => '🍌');
-// }
-
-async function getBanana() {
-    await delay(1000);
-    return '🍌';
-}
-
-
-
-// 콜백 지옥
-function pickFruits() {
-    return getApple().then(apple => {
-        return getBanana().then(banana => `${apple} + ${banana}`);
-    });
-}
-
-
-// 기본 코드
-async function pickFruits() {
-    const apple = await getApple();
-    const banana = await getBanana();
-    return `${apple} + ${banana}`;
-}
-
-
-// 에러 처리 코드
-async function pickFruits() {
-    try {
-        const apple = await getApple();
-        const banana = await getBanana();
-        return `${apple} + ${banana}`;
-    } catch(error) {
-        // ...
-    }
-}
-
-
-// apple과 banana는 독립적이므로 병렬처리한 코드 (이렇게 안씀)
-async function pickFruits() {
-    const applePromise = getApple();
-    const bananaPromise = getBanana();
-    const apple = await applePromise;
-    const banana = await bananaPromise;
-    return `${apple} + ${banana}`;
-}
-
-pickFruits().then(console.log);
-
-
-// 병렬처리
-function pickAllFruits() {
-    return Promise.all([getApple(), getBanana()])
-    .then(fruits => fruits.join(' + '));
-}
-
-pickAllFruits().then(console.log);
-
-
-function pickOnlyOne() {
-    return Promise.race([getApple(), getBanana()]);
-}
-
-pickOnlyOne().then(console.log);
-
-
-
-
-// const userStorage2 = new UserStorage2();
-// const id2 = prompt('enter your id');
-// const password2 = prompt('enter your password');
-// userStorage2
-// .loginUser(id2, password2)
-// .then(userStorage2.getRoles)
-// .then(user => alert(`Hello ${user.name}, you have a ${user.role} role`))
-// .catch(console.log)
+const student = "자바스크립트학생";
+const age = 20;
+console.group("복합사용");
+    console.log("%s님의 나이는 %d세 입니다.", student, age);
+console.groupEnd();

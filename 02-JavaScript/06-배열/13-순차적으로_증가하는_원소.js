@@ -32,3 +32,14 @@ for(let i = 0; i < data.length; i++) {
     }
     console.log(str);
 }
+
+for (let i = 0; i < data.length; i++) {
+    let str = ""
+    for (let j = 0; j < data[i].length; j++) {
+        str += data[i][j];
+        if (j < 6) {
+            str += "\t"
+        }
+    }
+    console.log(str);
+}

@@ -1,3 +1,264 @@
+/* ---------------- 전체 영역 */
 * {
     box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    max-width: 1220px;
+    margin: 0 auto;  
+    position: relative;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+}
+
+hr {
+    border-top: #ccc;
+}
+
+h2 {
+    font-weight: normal;
+}
+
+.inner {
+    margin: 30px 0;
+    padding: 5px 25px;
+}
+
+
+/* ---------------- 헤더 영역 */
+header {
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header .head-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .nav-image {
+    padding: 20px;
+}
+
+header .nav-image:hover {
+    background-color: #ccc;
+}
+
+header .head-inner img {
+    width:15px;
+    height:15px;
+    vertical-align: middle;
+}
+
+header .head-inner h1 {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+header .head-inner h2 {
+    font-size: 16px;
+    padding: 0 20px;
+}
+
+
+
+/* ---------------- 메인 영역 */
+main {
+    position: relative;
+    top:80px
+}
+
+main .inner {
+    margin: 30px 0;
+    padding: 5px 25px;
+}
+
+
+/* 아티클 */
+main .insight-item {
+    padding: 0 8px;
+}
+
+
+main .item-img img {
+    max-width: 100%;
+    min-width: 100%;
+}
+
+main .insight-item {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+main .insight-item .item-title {
+    font-weight: normal;
+    line-height: 1.8rem;
+    margin: 5px 0;
+}
+
+main .insight-item .item-text {
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+    margin: 10px 0;
+}
+
+
+/* 아티클 페이지 */
+main nav {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+main nav p {
+    width: 35px;
+    height: 35px;
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+    text-align: center;
+}
+
+main nav p:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+
+/* 셰프 소개 */
+main .chef-container {
+    text-align: center;
+    margin-bottom: 40px
+}
+
+main .chef-image img {
+    max-width: 100%;
+    margin-bottom: 15px;
+}
+
+main .chef-introduce h4 {
+    font-weight: normal;
+    font-style: italic;
+}
+
+main .chef-introduce p {
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+}
+
+
+/* ---------------- 푸터 영역 */
+footer {
+    position: relative;
+    top: 80px;
+}
+
+footer .f-container {
+    margin-bottom: 30px;
+}
+
+footer p {
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+}
+
+footer a {
+    text-decoration: underline;   
+}
+
+
+/* 푸터-푸터 */
+
+/* 푸터-블로그 */
+footer .blog {
+    display: flex;
+    flex-direction: column;
+}
+
+
+footer .blog .blog-posts {
+    padding: 10px 5px;
+    border-bottom: 1px solid #f1f1f1;
+    display: flex;
+    align-items: center;
+}
+
+footer .blog .blog-posts:hover {
+    background-color: #f1f1f1;
+}
+
+footer .blog .blog-posts:last-child {
+    border: none;
+}
+
+footer .blog .post-image img {
+    width: 50px;
+    height: 50px;
+}
+
+footer .blog .post-textbox {
+    margin: 0 0 0 20px;
+}
+
+footer .blog .post-textbox .post-title {
+    font-weight: normal;
+    margin: 0;
+}
+
+footer .blog .post-textbox .post-text {
+    margin: 0;
+}
+
+
+/* 푸터-태그 */
+footer .tag .tag-item {
+    background-color: #ccc;
+    color: black;
+    padding: 2px 5px;
+    font-size: 0.8rem;
+    line-height: 2rem;
+}
+
+footer .tag .tag-item:first-child {
+    background-color: #000;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+
+/* ---------------- 미디어 쿼리 */
+
+@media only screen and (min-width: 601px) {
+    main .inner .insight-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    main .inner .insight-item {
+        width: 25%;
+    }
+
+    footer .inner {
+        display: flex;
+        flex-direction: row;
+    }
+
+    footer  .f-container {
+        margin: 0 8px;
+        width: 33.3%;
+    }
 }
