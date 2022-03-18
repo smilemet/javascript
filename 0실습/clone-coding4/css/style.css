@@ -80,7 +80,7 @@ button {
 }
 
 
-/* ------------------- 큰 이미지 */
+/* ------------------- 헤더 & 큰이미지 */
 header .outer {
   background: url(../img/wedding_couple.jpg) no-repeat;
   background-position: center;
@@ -166,7 +166,7 @@ section .section-item-container {
 }
 
 
-/* 제인존결혼 */
+/* 제인&존 결혼 */
 #jane-john article .text {
   font-size: 0.8rem;
   font-style: italic;
