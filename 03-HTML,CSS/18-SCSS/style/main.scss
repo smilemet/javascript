@@ -1,0 +1,10 @@
+$main-color: red;
+
+
+div {
+	color: $main-color;
+	background-color: $main-color;
+	box-shadow: 10px 10px 10px $main-color;
+	text-shadow: 10px 10px 10px $main-color;
+	border: 1px solid $main-color;
+} 

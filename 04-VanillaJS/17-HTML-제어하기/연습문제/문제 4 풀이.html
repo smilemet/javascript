@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="dayCalc"></h1>
+    <button class="btn" id="day1">1일</button>
+    <button class="btn" id="day7">7일</button>
+    <button class="btn" id="day15">15일</button>
+    <button class="btn" id="day30">30일</button>
+    <button class="btn" id="day60">60일</button>
+
+    <script>
+        const dayCalc = document.querySelector('.dayCalc')
+        const time = new Date();
+        const year = time.getFullYear();
+        const month = time.getMonth() + 1;
+        const date = time.getDate();
+       
+        dayCalc.innerHTML = `${year}-${month}-${date} ~ ${year}-${month}-${date}`
+
+        document.querySelector('#day1').addEventListener('click', e => {
+            dayCalc.innerHTML = `${year}-${month}-${date} ~ ${year}-${month}-${date}`
+        });
+
+        document.querySelector('#day7').addEventListener('click', e => {
+            dayCalc.innerHTML = `${year}-${month}-${date-7} ~ ${year}-${month}-${date}`
+        });
+
+        document.querySelector('#day15').addEventListener('click', e => {
+            dayCalc.innerHTML = `${year}-${month}-${date-15} ~ ${year}-${month}-${date}`
+        });
+
+        document.querySelector('#day30').addEventListener('click', e => {
+            dayCalc.innerHTML = `${year}-${month}-${date-30} ~ ${year}-${month}-${date}`
+        });
+
+        document.querySelector('#day60').addEventListener('click', e => {
+            dayCalc.innerHTML = `${year}-${month}-${date-60} ~ ${year}-${month}-${date}`
+        });
+        
+    </script>
+</body>
+</html>

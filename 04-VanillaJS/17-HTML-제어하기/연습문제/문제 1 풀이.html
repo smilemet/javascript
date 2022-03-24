@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="time"></h1>
+
+    <script>
+        // 매 초마다 갱신 -> 타이머를 돌리라는 의미
+        setInterval(() => {
+            const date = new Date();
+            const yy = time.getFullYear();
+            const mm = time.getMonth();
+            const dd = time.getDate();
+            const hh = time.getHours();
+            const mi = time.getMinutes();
+            const ss = time.getSeconds();
+
+            if (month < 10) {
+                month = `0${month}`
+            }
+
+            if (date < 10) {
+                date = `0${date}`
+            }
+
+            if (hour < 10) {
+                hour = `0${hour}`
+            }
+
+            if (minute < 10) {
+                minute = `0${minute}`
+            }
+
+            if (second < 10) {
+                second = `0${second}`
+            }
+
+            timeClock.innerHTML = `${year}-${month}-${date} ${hour}:${minute}:${second}`;
+        }, 3000)
+    </script>
+</body>
+</html>

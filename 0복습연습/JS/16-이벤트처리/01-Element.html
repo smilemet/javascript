@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="myid"></h1>
+    <h2 class="mycls"></h2>
+    <h2 class="mycls"></h2>
+    <p></p>
+    <p></p>
+
+    <div class="a">
+      <div class="b">
+        <h3 id="c"></h3>
+        <p></p>
+      </div>
+    </div>
+
+    <h3 class="myh3"></h3>
+    <h3 class="myh3"></h3>
+    <h3 class="myh3"></h3>
+
+    <script>
+      // 태그 이름으로
+      const el1 = document.getElementsByTagName("p");
+
+      for (let i = 0; i < el1.length; i++) {
+        el1[i].innerHTML = `빨간색 ${i}`;
+        el1[i].style.color = "red";
+      }
+
+      // 클래스 이름으로
+      const el2 = document.getElementsByClassName("mycls");
+
+      let count = 0;
+      for (let i = 0; i < el2.length; i++) {
+        count++;
+        el2[i].innerHTML = `.mycls 영역 ( ${count} )`;
+      }
+
+      // ID값으로
+      const el3 = document.getElementById("myid");
+
+      el3.innerHTML = "#myid 영역";
+
+      // CSS 선택자로
+      const el4 = document.querySelector(".a > .b > #c");
+      el4.innerHTML = ".a > .b > #c 영역";
+
+      // CSS 선택자로 복수
+      const el5 = document.querySelectorAll(".myh3");
+
+      let count2 = 0;
+      el5.forEach((e) => {
+        e.innerHTML = `.myh3 영역 ( ${count2} )`;
+        count2++;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="img/house2.jpg" alt="" class="pic">
+    <script>
+        function changePic() {
+            const target = document.querySelector('.pic')
+            const src = target.getAttribute('src');
+            if (src === 'img/house1.jpg') {
+                target.setAttribute('src', 'img/house2.jpg')
+            } else if (src === 'img/house2.jpg') {
+                target.setAttribute('src', 'img/house3.jpg')
+            } else if (src === 'img/house3.jpg') {
+                target.setAttribute('src', 'img/house1.jpg')
+            }
+        }
+
+        function intChange() {
+            setInterval(changePic, 3000);
+        }
+    </script>
+</body>
+</html>

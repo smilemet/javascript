@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="clock"></h1>
+
+    <script>
+        let timeClock = document.querySelector('.clock');
+        let thisTime = function () {
+            const time = new Date();
+            const year = time.getFullYear();
+            const month = time.getMonth();
+            const date = time.getDate();
+            const hour = time.getHours();
+            const minute = time.getMinutes();
+            const second = time.getSeconds();
+
+            if (month < 10) {
+                month = `0${month}`
+            }
+
+            if (date < 10) {
+                date = `0${date}`
+            }
+
+            if (hour < 10) {
+                hour = `0${hour}`
+            }
+
+            if (minute < 10) {
+                minute = `0${minute}`
+            }
+
+            if (second < 10) {
+                second = `0${second}`
+            }
+
+            timeClock.innerHTML = `${year}-${month}-${date} ${hour}:${minute}:${second}`;
+        }
+        
+        let timeUpdate = function() {
+            setInterval(thisTime, 1000);
+        }
+    </script>
+</body>
+</html>
