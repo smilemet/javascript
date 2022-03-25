@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="img/ex1.gif" alt="" class="pic" width="300px">
+    <script>
+        const pics = ['img/ex2.gif', 'img/ex3.gif', 'img/ex4.gif'];
+        let num = 0;
+
+        const changePic = function() {
+            num = (num + 1) % pics.length;
+            document.querySelector('.pic').setAttribute('src', pics[num]);
+        }
+
+        setInterval(changePic, 2000);
+    </script>
+</body>
+</html>

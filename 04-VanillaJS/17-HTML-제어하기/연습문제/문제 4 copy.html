@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1><span id="console1"></span> ~ <span id="console2"></span></h1>
+    <button class="time btn1">1일</button>
+    <button class="time btn2">7일</button>
+    <button class="time btn3">15일</button>
+    <button class="time btn4">30일</button>
+    <button class="time btn5">60일</button>
+
+    <script>
+        const button = document.querySelectorAll('.time')
+        const changeDay = function(day) {
+            let startDate = new Date();
+            let nowDate = new Date();
+
+            startDate.setDate(startDate.getDate()-(day-1));
+
+            document.getElementById('console1').innerHTML = `${startDate.getFullYear()}-${startDate.getMonth()+1}-${startDate.getDate()}`;
+            document.getElementById('console2').innerHTML = `${nowDate.getFullYear()}-${nowDate.getMonth()+1}-${nowDate.getDate()}`;
+        }
+
+        changeDay(1);
+
+        document.querySelector('.btn1').addEventListener('click', () => changeDay(1));
+        document.querySelector('.btn2').addEventListener('click', () => changeDay(7));
+        document.querySelector('.btn3').addEventListener('click', () => changeDay(15));
+        document.querySelector('.btn4').addEventListener('click', () => changeDay(30));
+        document.querySelector('.btn5').addEventListener('click', () => changeDay(60));
+        
+    </script>
+</body>
+</html>
