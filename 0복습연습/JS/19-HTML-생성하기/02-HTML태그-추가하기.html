@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    li {
+      padding: 5px 10px;
+      cursor: pointer;
+      border-bottom: 1px dotted #d5d5d5;
+    }
+
+    li:first-child {
+      border-top: 1px dotted #d5d5d5;
+    }
+
+    .child {
+      background-color: #06f;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="comment">
+  <button type="button" id="beforebegin">beforebegin</button>
+  <button type="button" id="afterend">afterend</button>
+  <button type="button" id="afterbegin">afterbegin</button>
+  <button type="button" id="beforeend">beforeend</button>
+  <hr>
+
+  <ul id="list"></ul>
+
+  <script>
+    const list = document.querySelector('#list');
+    const comment = document.querySelector('#comment');
+
+    // 인풋된 글자를 리스트로 만드는 함수
+    const inputList = (where) => {
+      list.insertAdjacentHTML(where, `<li class="item beforebegin" onclick="this.remove()">${comment.value}</li>`)
+    }
+
+
+    // ↑ 이벤트 리스너로 붙임
+    document.querySelector('#beforebegin').addEventListener('click', e => inputList('beforebegin'));
+    document.querySelector('#afterend').addEventListener('click', e => inputList('afterend'));
+    document.querySelector('#afterbegin').addEventListener('click', e => inputList('afterbegin'));
+    document.querySelector('#beforeend').addEventListener('click', e => inputList('beforeend'));
+  </script>
+</body>
+</html>

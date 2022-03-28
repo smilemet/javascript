@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body * {
+      margin: 0;
+      padding: 0;
+    }
+
+    button {
+      display: inline-block;
+    }
+
+    p.item-title {
+      background-color: #ccc;
+    }
+
+    p.item-cont {
+      background-color: #f1f1f1;
+    }
+
+    ul li {
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>연습문제</h1>
+  <span>적당한 버튼 ▶ </span> <button class="plus"> + </button>
+
+  <!-- HTML 요소 추가 위치 -->
+  <ul id="list"></ul>
+
+  <script>
+    // 요소 추가 위치
+    const list = document.querySelector('#list');
+    
+    // 요소 추가 함수
+    const getItem = () => {
+      // 리스트 추가하고 클래스 추가
+      const plusItem = document.createElement('li');
+      plusItem.classList.add('item')
+
+      plusItem.addEventListener('click', e => e.currentTarget.remove());
+      return plusItem;
+    };
+
+    document.querySelector('.plus').addEventListener('click', e => {
+      list.insertAdjacentHTML('afterend', '<p class="item-title">title</p><p class="item-content">text</p>')
+      document.querySelector('.item').addEventListener('click', e => {e.currentTarget.remove()})
+    })
+  </script>
+</body>
+</html>

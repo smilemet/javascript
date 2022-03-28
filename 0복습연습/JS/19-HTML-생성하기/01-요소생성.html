@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    li {
+      padding: 5px 10px;
+      cursor: pointer;
+      border-bottom: 1px dotted #d5d5d5;
+    }
+
+    li:first-child {
+      border-top: 1px dotted #d5d5d5;
+    }
+
+    .blue {
+      background-color: #06f2;
+    }
+
+    .orange {
+      background-color: #f602;
+    }
+
+    .pink {
+      background-color: #f0f2;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="comment">
+  <button type="button" id="appendChild">appendChild</button>
+  <button type="button" id="insertBefore1">insertBefore1</button>
+  <button type="button" id="insertBefore2">insertBefore2</button>
+  <hr>
+
+  <ul id="list"></ul>
+
+  <script>
+    const list = document.querySelector('#list');
+    const comment = document.querySelector('#comment');
+
+    // 인풋된 글자를 리스트로 만드는 함수
+    const makeList = (clsname) => {
+      const item = document.createElement('li');
+      item.classList.add('item', clsname)
+      item.innerHTML = comment.value;
+
+      item.addEventListener('click', e => {e.currentTarget.remove()})
+
+      return item;
+    }
+
+    // ↑ 이벤트 리스너로 붙임
+    document.querySelector('#appendChild').addEventListener('click', e => {
+      list.appendChild(makeList('blue'))
+    });
+    document.querySelector('#insertBefore1').addEventListener('click', e => {
+      list.insertBefore(makeList('orange'), null)
+    });
+    document.querySelector('#insertBefore2').addEventListener('click', e => {
+      list.insertBefore(makeList('pink'), document.querySelector('li:first-child'));
+    });
+
+  </script>
+</body>
+</html>
