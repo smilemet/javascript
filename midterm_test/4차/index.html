@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+  <header>
+    <div class="inner">
+      <div class="container">
+        <div class="title">
+          <a href="https://www.naver.com"><h1 class="blind-txt">네이버</h1></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="inner">
+      <div class="container">
+        <h2 class="blind-txt">회원가입 폼</h2>
+        <form class="signup-form">
+          <!-- id, password -->
+          <div class="form-group">
+            <div class="form-item">
+              <label for="user_id"><h3>아이디</h3></label>
+              <div class="form-input">
+                <input type="text" name="user_id" id="user_id" maxlength="20">
+                <span class="mail-addr input-r-side">@naver.com</span>
+              </div>
+            </div>
+            <div class="form-item">
+              <label for="user_pw"><h3>비밀번호</h3></label>
+              <div class="form-input">
+                <input type="password" name="user_pw" id="user_pw">
+                <span class="pw-check-msg input-r-side"></span>
+                <span class="pw-icon input-r-side"></span>
+              </div>
+            </div>
+            <div class="form-item">
+              <label for="user_pw_re"><h3>비밀번호 재확인</h3></label>
+              <div class="form-input">
+                <input type="password" name="user_pw_re" id="user_pw_re">
+                <span class="pw-icon2 input-r-side"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- personal -->
+          <div class="form-group">
+            <div class="form-item">
+              <label for="user_name"><h3>이름</h3></label>
+              <div class="form-input">
+                <input type="text" name="user_name" id="user_name">
+              </div>
+            </div>
+            <div class="form-item">
+              <label for="birth-yy"><h3>생년월일</h3></label>
+              <div class="form-input flex-row">
+                <input type="text" name="birth-yy"  id="birth-yy" class="birth birth-yy" placeholder="년(4자)" maxlength="4">
+                <select id="birth-mm" class="birth birth-mm">
+                  <option value="">월</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+                <input type="text" name="birth-dd" id="birth-dd" class="birth birth-dd" placeholder="일" maxlength="2">
+              </div>
+            </div>
+            <div class="form-item">
+              <label for="gender"><h3>성별</h3></label>
+              <div class="form-input">
+                <select name="gender" id="gender">
+                  <option value="">성별</option>
+                  <option value="1">남자</option>
+                  <option value="2">여자</option>
+                  <option value="3">선택 안함</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-item">
+              <label for="email"><h3>본인 확인 이메일</h3></label><span class="choice">(선택)</span>
+              <div class="form-input">
+                <input type="text" name="email" id="email" placeholder="선택입력">
+                </div>
+            </div>
+          </div>
+    
+          <!-- under 14 years old -->
+          <div class="tap1 tap-container hide">
+            <div class="tap-group">
+              <div>
+                <ul class="tap-title flex-row">
+                  <li class="tap-button active"><a href="">휴대전화인증</a></li>
+                  <li class="tap-button"><a href="">아이핀 인증</a></li>
+                </ul>
+                <div class="contract">
+                  <div class="contract-title">
+                    <input type="checkbox" id="contract-all"><label for="contract-all">아래 약관에 모두 동의합니다.</label>
+                  </div>
+                  <div class="contract-container flex-row">
+                    <ul class="contract-content">
+                      <li><input type="checkbox" id="contract-per" class="contract"><label for="contract-per">개인정보 이용</label></li>
+                      <li><input type="checkbox" id="contract-tel" class="contract"><label for="contract-tel">통신사 이용약관</label></li>
+                      <li><input type="checkbox" id="contract-naver" class="contract"><label for="contract-naver">네이버 개인정보 수집</label></li>
+                    </ul>
+                    <ul class="contract-content">
+                      <li><input type="checkbox" id="contract-id" class="contract"><label for="contract-id">고유식별정보 처리</label></li>
+                      <li><input type="checkbox" id="contract-com" class="contract"><label for="contract-com">인증사 이용약관</label></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-item">
+                <label for="nok_name"><h3>보호자 이름</h3></label>
+                <div class="form-input">
+                  <input type="text"  name="nok_name" id="nok_name">
+                </div>
+              </div>
+              <div class="form-item">
+                <label for="nok_birth_yy"><h3>보호자 생년월일</h3></label>
+                <div class="form-input flex-row">
+                  <input type="text" name="nok_birth_yy" id="nok_birth_yy" class="nok_birth birth-yy" placeholder="년(4자)" maxlength="4">
+                  <select name="nok_birty_mm" id="nok_birty_mm" class="nok_birth birth-mm">
+                    <option value="0">월</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                  <input type="text" name="nok_birty_dd" id="nok_birty_dd" class="nok_birth birth-dd" placeholder="일" maxlength="2">
+                </div>
+              </div>
+              <div class="form-item">
+                <label for="nok_gender"><h3>보호자 성별/국적</h3></label>
+                <div class="form-input flex-row">
+                  <select name="nok_gender" id="nok_gender">
+                    <option value="">성별</option>
+                    <option value="">남자</option>
+                    <option value="">여자</option>
+                  </select>
+                  <select name="nok_nation" id="nok_nation">
+                    <option value="">내국인</option>
+                    <option value="">외국인</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+  
+            <!-- mobile carrier -->
+            <div class="form-group">
+              <div class="form-item">
+                <label for="mobile"><h3>통신사</h3></label>
+                <div class="form-input">
+                  <select name="mobile" id="mobile">
+                    <option value="">SKT</option>
+                    <option value="">KT</option>
+                    <option value="">LG</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- <div class="form-item">
+                <label for="phoneno2"><h3>휴대전화</h3></label>
+                <div class="form-input">
+                  <div class="flex-row">
+                    <input type="text"  name="phoneno2" id="phoneno2" placeholder="전화번호 입력" >
+                    <button type="button" id="get-num-btn">인증번호 받기</button>
+                  </div>
+                  <input type="text"  name="authno2" id="authno2" placeholder="인증번호 입력하세요" disabled>
+                </div>
+              </div> -->
+            </div>
+          </div>
+          <!-- under 14 years old -->
+          
+    
+          <!-- cell phone -->
+          <div class="tap2 tap-container">
+            <div class="form-item">
+              <label for="phone"><h3>휴대전화</h3></label>
+              <div class="form-input">
+                <select name="phone" id="phone">
+                  <option value="">대한민국 +82</option>
+                  <option value="">일본 +81</option>
+                  <option value="">중국 +86</option>
+                </select>
+                <div class="flex-row">
+                  <input type="text"  name="phoneno" id="phoneno" placeholder="전화번호 입력" >
+                  <button type="button" id="get-num-btn">인증번호 받기</button>
+                </div>
+                <input type="text"  name="authno" id="authno" placeholder="인증번호 입력하세요" disabled>
+              </div>
+            </div>
+          </div>
+          <button type="submit" id="sign-up-btn">가입하기</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="inner">
+      <div class="container">
+        <ul class="flex-row">
+          <li><a href="">이용약관</a></li>
+          <li><a href=""><strong>개인정보처리방침</strong></a></li>
+          <li><a href="">책임의 한계와 법적고지</a></li>
+          <li><a href="">회원정보 고객센터</a></li>
+        </ul>
+        <div>
+          <div class="footer-title"></div>
+          <span>©</span><a href="https://www.naver.com/" class="bold">NAVER Corp.</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Javascript -->
+  <script src="js/RegexHelper.js"></script>
+  <script src="js/ErrorException.js"></script>
+  <script src="js/formValueChecker.js"></script>
+  <script>
+    // 휴대전화 인증, 아이핀 인증 탭 전환
+    const tapBtn = document.querySelectorAll('.tap-button')
+    tapBtn.forEach(v => {
+      v.addEventListener('click', e => {
+        e.preventDefault();
+
+        tapBtn.forEach(v => {
+          v.classList.remove('active')
+        })
+
+        e.currentTarget.classList.add('active');
+      })
+    });
+
+    // 약관 전체 체크
+    document.querySelector('#contract-all').addEventListener('change', e => {
+      document.querySelectorAll('.contract').forEach(v => {
+        v.checked = e.currentTarget.checked;
+      })
+    });
+  </script>
+</body>
+</html>
