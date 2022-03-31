@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .subplot {
+      float: left;
+      width: 33.3%;
+      padding: 50px;
+      box-sizing: border-box;
+    }
+
+    .subplot-item {
+      width: auto;
+      height: 320px;
+    }
+  </style>
+</head>
+<body>
+  <h1>chart 결과물</h1>
+  <hr>
+  <div class="subplot">
+    <h2>학과별 학생 수</h2>
+    <div class="subplot-item">
+      <canvas id="mychart1"></canvas>
+    </div>
+  </div>
+  <div class="subplot">
+    <h2>학년에 따른 평균 나이 변화</h2>
+    <div class="subplot-item">
+      <canvas id="mychart2"></canvas>
+    </div>
+  </div>
+  <div class="subplot">
+    <h2>학년별 평균키와 평균 몸무게</h2>
+    <div class="subplot-item">
+      <canvas id="mychart3"></canvas>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+  <script src="./js/dataset.js"></script>
+  <script src="./js/chartHelper.js"></script>
+  <!-- <script src="./js/hello.js"></script> -->
+</body>
+</html>
