@@ -19,8 +19,10 @@
   <script>
     console.log(location.search);
 
+    // '?' 문자 제외하고 그 뒤 문자열을 가져옴
     const query = location.search.substring(1);
     console.log(query);
+
     const params = query.split('&');
     console.log(params);
 
@@ -35,8 +37,16 @@
     console.log(mydata);
 
     let msg = '';
-    switch
+    switch (mydata.weekday) {
+      case 'mon':
+        msg = '월요일입니다';
+        break;
+      case 'sun':
+        msg = '일요일입니다';
+        break;
+    }
 
+    document.querySelector("#console").innerHTML = msg;
   </script>
 </body>
 </html>
