@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .flex-row {
+      display:flex;
+    }
+
+    button {
+      line-height: 15px;
+    }
+
+    #loading {
+      width: 100px;
+      height: 100px;
+      background: url(img/loading.gif) no-repeat;
+      background-size: cover;
+      background-position: center center;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      display: none;
+    }
+
+    #loading.active {
+      display: block;
+    }
+
+    #bookList {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #bookList li {
+      margin: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    #bookList li:last-of-type {
+      margin: 10px;
+      border-bottom: none;
+    }
+
+    #bookList li a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    #bookList .img-con img {
+      width: 150px;
+      height: 150px;
+      display: block;
+      object-fit: contain;
+      margin-bottom: 10px;
+      
+    }
+
+    #bookList .text-con {
+      margin: 0 20px;
+    }
+
+    #bookList .text-con h2 {
+      font-size: 18px;
+      margin-top: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      word-wrap: break-word;
+    }
+
+    #bookList .text-con p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      word-wrap: break-word;
+    }
+
+    #bookList .text-con span {
+      display: inline-block;
+      /* border-right: 1px solid #000; */
+
+    }
+
+    #bookList .text-con p,
+    #bookList .text-con span {
+      font-size: 14px;
+    }
+
+    #bookList .text-con span::after{
+      content: '|';
+      margin: 0 7px;
+    }
+  </style>
+</head>
+<body>
+  <div id="loading"></div>
+  <h1>카카오 책 검색</h1>
+
+  <form id="searchForm">
+    <fieldset>
+      <!-- select1 -->
+      <select name="sort" id="sort">
+        <option value="accuracy">정확도순</option>
+        <option value="latest">발간일순</option>
+      </select>
+      <!-- select2 -->
+      <select name="size" id="size">
+        <option value="10">10건</option>
+        <option value="20">20건</option>
+        <option value="30">30건</option>
+        <option value="40">40건</option>
+        <option value="50">50건</option>
+      </select>
+      <!-- query input -->
+      <input type="search", id="query", placeholder="검색어 입력">
+      <button type="submit">검색</button>
+    </fieldset>
+  </form>
+
+  <ul id="bookList">
+    <li>
+      <a href="#" class="flex-row">
+        <div class="img-con">
+          <img src="img/noimage.jpg" alt="">
+        </div>
+        <div class="text-con">
+          <h2>글 제목</h2>
+          <p>본문</p>
+          <span>저자</span
+          ><span>출판사</span
+          ><span>가격</span
+          ><span>할인가</span>
+        </div>
+      </a>
+    </li>
+  </ul>
+  
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./libs/searchHelper.js"></script>
+</body>
+</html>
