@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>영화진흥위원회 박스오피스 순위</h1>
+
+  <input type="date" id="targetDt">
+
+  <hr>
+
+  <table>
+    <thead>
+      <tr>
+        <th>순위</th>
+        <th>영화제목</th>
+        <th>관객수</th>
+        <th>개봉일</th>
+      </tr>
+    </thead>
+    <tbody id="list-body"></tbody>
+  </table>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const updateBoxOffice = async (targetDt) => {
+      const listBody = document.querySelector('#list-body');
+      const old_item = listBody.getElementsByTagName('tr');
+
+      Array.from(old_item).map(v => {
+        listBody.removeChild(v);
+      });
+
+      const _URL = 'http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json';
+      const _PARAM = {
+        params: {
+          key: '69500990a4b72238e6ca275fc3384ee4',
+          targetDt: targetDt
+        }
+      }
+
+      let json = null;
+
+      try {
+        json = await axios.get(_URL, _PARAM);
+        console.log(json);
+      } catch (err) {
+        alert(err.msg);
+        return;
+      } 
+
+      if (json !== null) {
+        const {data} = json;
+        console.log(data);
+
+        data.boxOfficeResult.dailyBoxOfficeList.map(v => {
+          const tr = document.createElement('tr');
+          const td1 = document.createElement('td');
+          const td2 = document.createElement('td');
+          const td3 = document.createElement('td');
+          const td4 = document.createElement('td');
+
+          td1.innerHTML = v.rank;
+          td2.innerHTML = v.movieNm;
+          td3.innerHTML = v.audiCnt;
+          td4.innerHTML = v.openDt;
+
+          tr.appendChild(td1);
+          tr.appendChild(td2);
+          tr.appendChild(td3);
+          tr.appendChild(td4);
+
+          listBody.appendChild(tr);
+        })
+      }
+    }
+
+    document.querySelector('#targetDt').addEventListener('change', e => {
+      const date = e.currentTarget.value.replaceAll('-', '');
+      updateBoxOffice(date);
+    });
+    
+    const today = new Date();
+    let yy = today.getFullYear();
+    let mm = today.getMonth() + 1;
+    let dd = today.getDate() - 1;
+
+    if(mm < 10) {
+      mm = `0${mm}`;
+    }
+    if(dd < 10) {
+      dd = `0${dd}`;
+    }
+    
+    let sendDt = `${yy}${mm}${dd}`
+
+    console.log(sendDt);
+
+    updateBoxOffice(sendDt);
+  </script>
+</body>
+</html>

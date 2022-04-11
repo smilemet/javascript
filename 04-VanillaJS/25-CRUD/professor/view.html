@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>교수정보 관리 :: MySchool</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- header -->
+    <div data-include="../inc/header_p.html"></div>
+    <!-- body -->
+    <section>
+      <dl>
+        <dt>교수번호</dt>
+        <dd class="id"></dd>
+        <dt>이름</dt>
+        <dd class="name"></dd>
+        <dt>아이디</dt>
+        <dd class="userid"></dd>
+        <dt>직급</dt>
+        <dd class="position"></dd>
+        <dt>급여</dt>
+        <dd class="sal"></dd>
+        <dt>입사일</dt>
+        <dd class="hiredate"></dd>
+        <dt>보직수당</dt>
+        <dd class="comm"></dd>
+        <dt>부서번호</dt>
+        <dd class="deptno"></dd>
+      </dl>
+      <a href="index.html">목록보기</a>
+      <a href="#" class="btn-edit">수정하기</a>
+      <a href="#" class="btn-delete">삭제하기</a>
+    </section>
+    <!-- footer -->
+    <div data-include="../inc/footer.html"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../assets/js/include.js"></script>
+  <script>
+    (async () => {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+
+      // get 오류
+      if(!id) {
+        alert('교수정보가 없습니다.')
+        history.back(); // 뒤로가기
+        return;
+      }
+
+      // Ajax 요청
+      let json = null;
+
+      try {
+        json = await axios.get(`http://localhost:3000/professor/${id}`);
+      } catch (e) {
+        console.error(e);
+        alert('요청을 처리하는데 실패했습니다.');
+        return;
+      }
+
+      if (json !== null) {
+        const {data} = json;
+        document.querySelector('.id').innerHTML = data.id;
+        document.querySelector('.name').innerHTML = data.name;
+        document.querySelector('.userid').innerHTML = data.userid;
+        document.querySelector('.position').innerHTML = data.position;
+        document.querySelector('.sal').innerHTML = data.sal;
+        document.querySelector('.hiredate').innerHTML = data.hiredate;
+        document.querySelector('.comm').innerHTML = data.comm;
+        document.querySelector('.deptno').innerHTML = data.deptno;
+
+        // 수정 화면으로 가기
+        document.querySelector('.btn-edit').setAttribute('href', `edit.html?id=${data.id}`);
+
+        // 삭제
+        const btnDelete = document.querySelector('.btn-delete');
+        btnDelete.dataset.id = data.id;
+        btnDelete.dataset.name = data.name;
+      }
+    })();
+
+    document.querySelector('.btn-delete').addEventListener('click', e => {
+      e.preventDefault();
+
+      const current = e.currentTarget;
+      const id = current.dataset.id;
+      const name = current.dataset.name;
+
+      if (!confirm(`정말 ${name}을 삭제하시겠습니까?`)) {
+        return;
+      }
+
+      let json = null;
+
+      try {
+        json = axios.delete(`http://localhost:3000/professor/${id}`);
+      } catch (e) {
+        console.error(e);
+        alert('요청을 처리하는데 실패했습니다.');
+        return;
+      }
+
+      
+
+      if (json !== null) {
+        window.location = 'index.html';
+      }
+    });
+  </script>
+</body>
+</html>

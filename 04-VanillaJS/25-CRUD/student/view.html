@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>학생관리 :: MySchool</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- header -->
+    <div data-include="../inc/header_s.html"></div>
+    <!-- body -->
+    <section>
+      <dl class="body-list">
+        <dt>학생번호</dt>
+        <dd class="id"></dd>
+        <dt>이름</dt>
+        <dd class="name"></dd>
+        <dt>아이디</dt>
+        <dd class="userid"></dd>
+        <dt>학년</dt>
+        <dd class="grade"></dd>
+        <dt>주민번호</dt>
+        <dd class="idnum"></dd>
+        <dt>생년월일</dt>
+        <dd class="birthdate"></dd>
+        <dt>전화번호</dt>
+        <dd class="tel"></dd>
+        <dt>키</dt>
+        <dd class="height"></dd>
+        <dt>몸무게</dt>
+        <dd class="weight"></dd>
+        <dt>학과번호</dt>
+        <dd class="deptno"></dd>
+        <dt>담당교수 일련번호</dt>
+        <dd class="profno"></dd>
+      </dl>
+      <a href="index.html">목록보기</a>
+      <a href="#" class="edit">수정하기</a>
+      <a href="#" class="delete">삭제하기</a>
+      </section>
+    <!-- footer -->
+    <div data-include="../inc/footer.html"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../assets/js/include.js"></script>
+  <script>
+    // 학생정보 목록
+    (async () => {
+      const param = new URLSearchParams(window.location.search);
+      const id = param.get('id');
+      let json = null;
+
+      try {
+        json = await axios.get(`http://localhost:3000/student/${id}`);
+        console.log(json);
+      } catch (err) {
+        console.error(err);
+        alert('학생 정보가 없습니다.');
+        window.location = 'index.html';
+        return;
+      } 
+
+      const {data} = json;
+      const $ = (item) => document.querySelector(item);
+
+      $('.id').innerHTML = data.id;
+      $('.name').innerHTML = data.name;
+      $('.userid').innerHTML = data.userid;
+      $('.grade').innerHTML = data.grade;
+      
+      const idnumF = data.idnum.substring(0, 6);
+      const idnumB = data.idnum.substring(6);
+      $('.idnum').innerHTML = `${idnumF}-${idnumB}`;
+      
+      const birth = new Date(data.birthdate);
+      const yy = birth.getFullYear();
+      const mm = birth.getMonth() + 1;
+      const dd = birth.getDate();
+      $('.birthdate').innerHTML = `${yy}년 ${mm < 10 ? '0' + mm : mm}월 ${dd < 10 ? '0' + dd : dd}일`;
+
+      $('.tel').innerHTML = data.tel;
+      $('.height').innerHTML = data.height + 'cm';
+      $('.weight').innerHTML = data.weight + 'kg';
+      $('.deptno').innerHTML = data.deptno;
+      $('.profno').innerHTML = data.profno || '-';
+
+      $('.edit').setAttribute('href', `edit.html?id=${data.id}`)
+      $('.delete').dataset.id = data.id;
+      $('.delete').dataset.name = data.name;
+    })();
+
+    // 삭제버튼 클릭
+    document.querySelector('.delete').addEventListener('click', e => {
+      e.preventDefault();
+      const current = e.currentTarget;
+      const id = current.dataset.id;
+      const name = current.dataset.name;
+
+      if (!confirm(`정말 ${name}을 삭제하시겠습니까?`)) {return;}
+
+      (async () => {
+        let json = null;
+        try {
+          json = await axios.delete(`http://localhost:3000/student/${id}`)
+        } catch(err) {
+          console.error(err);
+          alert('삭제 중 오류가 발생하였습니다.')
+          return;
+        }
+
+        if (json !== null) {
+          window.location = 'index.html';
+        }
+      })();
+    })
+  </script>
+</body>
+</html>

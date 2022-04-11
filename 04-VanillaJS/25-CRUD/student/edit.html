@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>학생관리 :: MySchool</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- header -->
+    <div data-include="../inc/header_s.html"></div>
+    <!-- body -->
+    <section>
+      <form name="form" id="student-info">
+        <input type="hidden" name="id" id="id">
+
+        <div class="form-group">
+          <label for="name">이름<span class="text-danger">*</span></label>
+          <div>
+            <input type="text" name="name" id="name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="userid">아이디<span class="text-danger">*</span></label>
+          <div>
+            <input type="text" name="userid" id="userid">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="grade">학년</label>
+          <div>
+            <input type="text" name="grade" id="grade">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="idnum">주민번호</label>
+          <div>
+            <input type="text" name="idnum" id="idnum">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="birthdate">생년월일</label>
+          <div>
+            <input type="text" name="birthdate" id="birthdate">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="tel">전화번호</label>
+          <div>
+            <input type="text" name="tel" id="tel">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="height">키</label>
+          <div>
+            <input type="text" name="height" id="height">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="weight">몸무게</label>
+          <div>
+            <input type="text" name="weight" id="weight">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="deptno">학과번호</label>
+          <div>
+            <input type="text" name="deptno" id="deptno">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="profno">담당교수</label>
+          <div>
+            <input type="text" name="profno" id="profno">
+          </div>
+        </div>
+        <hr>
+        <div class="text-center">
+          <button type="submit">저장하기</button>
+          <button type="reset">다시 작성</button>
+        </div>
+      </form>
+    </section>
+    <!-- footer -->
+    <div data-include="../inc/footer.html"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../assets/js/include.js"></script>
+  <script>
+    (async () => {
+      const param = new URLSearchParams(window.location.search);
+      const id = param.get('id')
+
+      if (!id) {
+        alert('학생 정보가 없습니다.');
+        history.back();
+        return;
+      }
+
+      let json = null;
+
+      try {
+        json = await axios.get(`http://localhost:3000/student/${id}`);
+      } catch(err) {
+        console.error(err);
+        alert('정보 로드 중 오류가 발생하였습니다.');
+        return;
+      }
+
+      const {data} = json;
+      document.querySelector('#id').value = data.id;
+      document.querySelector('#name').value = data.name;
+      document.querySelector('#userid').value = data.userid;
+      document.querySelector('#grade').value = data.grade;
+      document.querySelector('#idnum').value = data.idnum;
+
+      const birth = new Date(data.birthdate);
+      const yy = birth.getFullYear();
+      const mm = birth.getMonth() + 1;
+      const dd = birth.getDate();
+      document.querySelector('#birthdate').value = `${yy}${mm < 10 ? '0' + mm : mm}${dd < 10 ? '0' + dd : dd}`;
+      document.querySelector('#tel').value = data.tel;
+      document.querySelector('#height').value = data.height;
+      document.querySelector('#weight').value = data.weight;
+      document.querySelector('#deptno').value = data.deptno;
+      document.querySelector('#profno').value = data.profno;
+    })();
+
+    document.querySelector('#student-info').addEventListener('submit', e => {
+      e.preventDefault();
+
+      (async () => {
+        // 생년월일 가공
+        const birth = document.querySelector('#birthdate').value;
+        let birthdate = null;
+        if (birth !== null) {
+          const yy = birth.substring(0, 4);
+          const mm = birth.substring(4, 2) - 1;
+          const dd = birth.substring(6, 2);
+          birthdate = new Date(yy, mm, dd)
+        }
+
+        const param = {
+          name: document.querySelector('#name').value,
+          userid: document.querySelector('#userid').value,
+          grade: document.querySelector('#grade').value,
+          idnum: document.querySelector('#idnum').value,
+          birthdate: birthdate,
+          tel: document.querySelector('#tel').value,
+          height: document.querySelector('#height').value,
+          weight: document.querySelector('#weight').value,
+          deptno: document.querySelector('#deptno').value,
+          profno: document.querySelector('#profno').value,
+        }
+
+        console.log(document.querySelector('#name').value)
+
+        let json = null;
+        const id = document.querySelector('#id').value
+
+        try {
+          json = await axios.put(`http://localhost:3000/student/${id}`, param);
+          console.log(param.name)
+          window.location = 'index.html';
+        } catch(err) {
+          console.error(err);
+          alert('데이터 저장 중 오류가 발생하였습니다.');
+          return;
+        }
+      })();
+    });
+  </script>
+</body>
+</html>
