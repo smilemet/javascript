@@ -1,0 +1,476 @@
+/***************************
+Default display
+****************************/
+* {box-sizing: border-box;}
+
+html,
+body {
+  min-width: 100%;
+  max-width: 100%;
+  word-break: keep-all;
+  letter-spacing: -0.1rem;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+.blind-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+}
+
+.flex-row {display: flex;}
+.float-left {float: left;}
+.float-right {float: right;}
+
+.clearfix {
+  &::after{
+    content: '';
+    display: block;
+    float: none;
+    clear: both;
+  }
+}
+
+/***************************
+DIV, NAV
+****************************/
+div.curtain { // 체크
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #000;
+  opacity: 0.6;
+  z-index: 100;
+}
+
+nav {
+  height: 4rem;
+  position: relative;
+  z-index: 1000;
+  .inner {max-width: 1480px; margin: 0 auto;}
+  .sub-back {display: none; content: ''; height: 20rem; background-color: #fff;} // 체크
+}
+
+nav .container {
+  height: 4rem;
+  max-width: 100%;
+  min-width: 100%;
+  margin: 0 auto;
+  padding: 0 2vw;
+  font-size: 14px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: absolute;
+  z-index: 1000;
+  a {display: block; line-height: 3.7rem;}
+}
+
+nav .title-logo {
+  width: 15rem;
+  img {transform: translate(0, 15%);}
+}
+
+nav .menu {
+  li {display: inline-block;}
+  a {padding: 0 1.2rem;}
+  & > li > a::after {
+    content:''; 
+    display: block; 
+    border-bottom: 3px solid transparent;
+  }
+  & > li > a:hover::after {
+    padding: 0 1.2rem; 
+    border-bottom: 3px solid #000;
+  }
+}
+
+nav .sub-menu {
+  display: none;
+  position: absolute;
+  top: 5.2rem;
+  li {
+    display: block;
+    padding: 0;
+    a {line-height: 2rem;}
+    a:hover {font-weight: bold;}
+  }
+}
+
+nav .lang {
+  li {display: inline-block;}
+  a {padding: 0 15px;}
+  li:last-of-type a {padding-right: 0;}
+}
+
+
+/***************************
+HEADER
+****************************/
+header .container {
+  position: relative;
+
+  li {position: absolute; opacity: 0;} 
+
+  .title-slide-l,
+  .title-slide-r {
+    height: 55vw;
+    & * {display: block; width: 100%; height: 100%;}
+    ul {position: relative;}
+  }
+
+  .title-slide-l{
+    width: 20%;
+    background-color: #bbb;
+    li.con1 {background-color: rgb(51, 50, 56); opacity: 0;}
+    li.con2 {background-color: rgb(21, 82, 54); opacity: 0;}
+    li.con3 {background-color: rgb(229, 237, 243); opacity: 0;}
+    li.con4 {background-color: rgb(239, 233, 201); opacity: 0;}
+    li.con5 {background-color: rgb(7, 50, 85); opacity: 0;}
+  }
+  .title-slide-r{
+    width: 80%;
+    background-color: #ddd;
+    position: relative;
+    li.con1 {background: url(../img/kv-01.jpg) no-repeat; background-size: cover; background-position: 80%, 0;}
+    li.con2 {background: url(../img/main_OLED.jpg) no-repeat; background-size: cover; background-position: center;}
+    li.con3 {background: url(../img/kv-02.jpg) no-repeat; background-size: cover; background-position: center;}
+    li.con4 {background: url(../img/kv-03_1.jpg) no-repeat; background-size: cover; background-position: center;}
+    li.con5 {background: url(../img/kv-04_1.jpg) no-repeat; background-size: cover; background-position: center;}
+  }
+
+  .title-btn {
+    position: absolute;
+    left: 20%;
+    bottom: 0;
+    z-index: 10;
+
+    & > button {
+      margin: 0px;
+      padding: 0px;
+      border: solid #ccc;
+      border-width: 0 0 1px 1px;
+      background-color: #fff;
+      vertical-align: middle;
+      cursor: pointer;
+
+      span {display: block; width: 3.5vw; height: 3.5vw;}
+      
+      &.btn-back span {background: url(../img/kv_prev.png) no-repeat; background-size: contain;}
+      &.btn-forward span {background: url(../img/kv_next.png) no-repeat center;  background-size: contain;}
+    }
+
+    span#current-page {font-size: 0.8rem;}
+    span#page-all {font-size: 0.8rem;}
+
+    button.btn-pause {
+      background-color: transparent;
+      border: none;
+    }
+
+    p {display: inline-block; padding: 0 1rem;}
+  }
+
+  .title-link{
+    justify-content: center;
+    width: 55vw;
+    height: 7vw;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #00000020;
+    color: #fff;
+    transform: translateX(100%) rotate(90deg);
+    transform-origin: top left;
+    z-index: 10;
+    p {margin:0 30px; padding-top: 3.7vw; font-size: 1vw; letter-spacing: normal;}
+    span {
+      &.arrow {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: url(../img/arrow_news_letter_black.png) no-repeat bottom;
+        background-size: contain;
+        vertical-align: baseline;
+        -webkit-filter: invert(100%);
+      }
+    }
+  }
+
+  .title-txt {
+    width: 70vw;
+    height: 100%;
+    position: absolute;
+    left: 5%; 
+    color:#fff;
+
+    li {
+      width: 30vw;
+      top: 35%;
+      &#list2 {top: 40%;}
+      &#list5 {width: 33vw; top: 30%;}
+    }
+    p {margin: 1rem 0; font-size: 1.5vw; line-height: 2vw;}
+    h2, p.title {font-size: 3.3vw; font-weight: bold; line-height: 4.5vw;}
+    p.title {margin: 0}
+  }
+
+  .active {opacity: 1 !important;}
+}
+
+
+/***************************
+MAIN
+****************************/
+main .container {
+  width: 100%;
+  a {display: block; height: 25vh; padding: 2.7vh 2.2vw;}
+
+  & > ul {
+    justify-content: space-between;
+    li {width: 100%;}
+    h2 {margin:6px 0; font-size: 2.5vw; font-weight: bold; line-height: 1.5;}
+    p {font-size: 1.4vw; line-height: 2.5vh;}
+  }
+
+  ul.news {
+    li {
+      position: relative;
+      &:first-of-type {background-color: #d0dee8;}
+      &:nth-of-type(2) {background-color: #e5edf3;}
+      &:last-of-type {background-color: #f2f6f9;}
+      &:hover {.arrow {width: 5vw;}}
+    }
+    .arrow {
+      width: 3vw; 
+      height: 2vh; 
+      background: url(../img/arrow_black.png) no-repeat;
+      background-position: 105% 0;
+      position: absolute;
+      bottom: 20%;
+      left: 7%;
+      transition: width 0.3s;
+    }
+  }
+
+  ul.product {
+    color:#eee;
+    text-align: center;
+    p {opacity: .8;}
+    li {background: no-repeat center; background-size: cover;}
+    li:first-of-type {background-image: url(../img/product_oled.jpg)}
+    li:nth-of-type(2) {background-image: url(../img/product_qd.jpg)}
+    li:last-of-type {background-image: url(../img/product_galaxy_z_fold3.jpg)}
+  }
+}
+
+
+/***************************
+FOOTER
+****************************/
+footer .container {
+  padding: 2vh 3vw;
+
+  .sub-container {
+    margin-bottom: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 2rem;
+  }
+
+  .footer-left {
+    font-size: 0.77rem;
+    a {padding: 0 1rem; border-right: 1px solid #ccc;}
+    li:last-of-type a {
+      border-right: none;
+    }
+  }
+
+  .footer-right {
+    ul {align-items: center;}
+    ul li {margin: 0 0.2rem;}
+    a {display: inline-block;}
+    img {line-height: 3rem;}
+  }
+
+  .copyright {font-size: 0.7rem; color: #aaa;}
+}
+
+footer .footer-hr {display: none;}
+
+
+/***************************
+MEDIA QUERY
+****************************/
+@media screen and (max-width: 768px) {
+  header .container {
+    .title-slide-l,
+    .title-slide-r {height: 150vw;}
+    .title-btn {
+      width: 20%; height: 26%; position: absolute; left: 0; bottom: 0;
+
+      & > button {
+        display: block; width: 100%; height: 50%;
+        span {width: 100%; height: 100%;}
+      }
+
+      p {width: 20%;}
+      button.btn-pause {display: block; position: absolute; width: 20%; height: 13%; background-color: #fff;}
+    }
+
+    .title-link {
+      width: 80%;
+      height: 13%;
+      top: auto;
+      bottom: 0;
+      background-color: #ffffff30;
+      transform: none;
+      p {font-size: 1.3rem; line-height: 1.5rem;}
+    }
+
+    .title-txt {
+      left: 5%; top: -20%; color:#fff;
+  
+      li {
+        width: 70vw; top: 35%;
+        &#list2 {top: 40%;}
+        &#list5 {top: 30%;}
+      }
+      h2 {padding: 1rem 0; font-size: 7vw; font-weight: bold; line-height: 8vw;}
+      p {margin: 1rem 0; font-size: 3vw; line-height: 5vw;}
+    }
+
+    .title-btn p {display:none}
+  }
+
+  main .container {
+    & > ul {
+      a {width: 85%; margin: 0 auto; padding: 3rem 0;}
+      h2 {margin:1rem 0; font-size: 8vw; font-weight: bold; line-height: 1.2;}
+      p {font-size: 3.5vw; line-height: 1.3;}
+      .arrow {display: none;}
+    }
+
+    .news {display: block;}
+    .product {
+      display: block; 
+      height: 100%;
+      a {height: 87.6vw;}
+      li {display:none; background-size: contain;}
+    }
+  }
+
+  footer .container {
+    padding: 0 5rem;
+
+    .sub-container {margin: 0;}
+    .footer-left {
+      padding-top: 2.5rem; display: flex;  
+      justify-content: space-between;
+      font-size: 1.3rem;
+    }
+    .footer-right {padding-bottom: 2.5rem;}
+
+    .footer-left ul {
+      display: block;
+      li {margin: 1rem 0;}
+      a {border: none; padding: 0;}
+    }
+
+    .copyright {
+      font-size: 1.3rem;
+      padding: 2.5rem 0;
+      span {display: block; margin: .5rem 0;}
+    }
+  }
+
+  footer {position: relative;}
+  footer .footer-hr {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 8.5rem;
+    border-width: 0 0 1px 0;
+    border-color: #ccc;
+  }
+}
+
+
+@media screen and (max-width: 1260px) {
+  nav .menu,
+  nav .lang {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 921px) {
+  .sub-container {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  header .container {
+    .title-slide-l {width:16.7%;}
+    .title-slide-r {width:83.3%;}
+    .title-btn {left: 16.7%;}
+
+    .title-slide-l,
+    .title-slide-r {
+      height: 35vw;
+    }
+
+    .title-txt {
+      li {width: 25vw;}
+      h2 {font-size: 2.5vw; font-weight: bold; line-height: 1.3;}
+      p {margin: 1rem 0; font-size: 1vw; line-height: 2vw;}
+    }
+    
+    .title-link{
+      width: 35vw;
+      height: 7vw;
+      p {margin:0 30px; padding-top: 4vw; font-size: 1rem; letter-spacing: normal;}
+      span {&.arrow {width: 20px; height: 20px;}
+      }
+    }
+  }
+
+  main .container {
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 1;
+
+    & > ul {
+      width: 50%;
+      a {width: 70%; height: 11vw; margin: 0 auto; padding: 1.5rem 0;}
+      h2 {margin:1rem 0 .5rem; font-size: 1.4vw; font-weight: bold; line-height: 1.2;}
+      p {font-size: 0.85vw; line-height: 1.5;}
+    }
+
+    ul.news .arrow {bottom: 15%; left: 15%;}
+  }
+
+  footer .container {
+    padding-top: .7rem;
+    .sub-container {margin-bottom: 1rem;}
+    .footer-left ul:first-of-type {
+      li:first-of-type a {padding-left: 0px;}
+      li:last-of-type a {border-right: 1px solid #ccc;}
+    }
+  }
+
+}
+
+@media screen and (min-width: 1544px) {
+  footer .container {
+    .footer-left {display: flex;}
+  }
+}
