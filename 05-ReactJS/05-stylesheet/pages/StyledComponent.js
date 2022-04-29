@@ -3,9 +3,9 @@ import React from "react";
 /**
  * 컴퍼넌트 코드 안에서 SCSS 문법을 적용한 컴포넌트를 직접 정의
  * 패키지 설치가 필요함
- * yarn add styled-components
- * VSCode에서 styled-components 지원을 위한 확장 프로그램
- * - vscode-styled-components
+ *    yarn add styled-components
+ *    VSCode에서 styled-components 지원을 위한 확장 프로그램
+ *    - vscode-styled-components
  */
 
 // 기능 사용을 위한 참조
