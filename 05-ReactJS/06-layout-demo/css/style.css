@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+ul, 
+ol, 
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+body {
+  margin: 0 auto;
+
+  font-family: 'Open Sans', sans-serif;
+}
+
+header .inner,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 4px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.gray {
+  color: #757575;
+}
+
+hr {
+  border-top: #ccc;
+}

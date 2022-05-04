@@ -1,0 +1,14 @@
+/**
+ * 파일명  : footer.scss
+ * 기능    : Footer.js 전용 scss 
+*/
+footer {
+  width: 100%;
+  height: 115px;
+  background-color: #f1f1f1;
+  text-align: center;
+  line-height: 115px;
+  font-size: 14px;
+  
+  a {text-decoration: underline;}
+}
