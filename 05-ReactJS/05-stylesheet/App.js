@@ -1,32 +1,37 @@
-import React from 'react';
+import React from "react";
 
 // Link 대신 NavLink 가져오기
-import { NavLink, Routes, Route } from 'react-router-dom';
+import { NavLink, Routes, Route } from "react-router-dom";
 
-import InlineCss from './pages/InlineCss';
-import CssClass from './pages/CssClass';
-import CssModule from './pages/CssModule';
-import Scss from './pages/Scss';
-import ScssModule from './pages/ScssModule';
-import StyledComponent from './pages/StyledComponent';
-import News from './pages/News';
+import InlineCss from "./pages/InlineCss";
+import CssClass from "./pages/CssClass";
+import CssModule from "./pages/CssModule";
+import Scss from "./pages/Scss";
+import ScssModule from "./pages/ScssModule";
+import StyledComponent from "./pages/StyledComponent";
+import Responsive from "./pages/Responsive";
+import News from "./pages/News";
 
 // CSS 파일도 import 해야 한다.
-import './assets/css/menu.css';
+import "./assets/css/menu.css";
+
+// 전역 SCSS 적용을 위한 StyledComponent
+import GlobalStyles from "./GlobalStyles";
 
 function App() {
   // 페이지 타이틀에 적용할 InlineCSS 정의
   // --> CSS는 JS 속성으로 기술해야 함
   // --> 전체 구조는 JSON 객체. (단위가 포함된 수치값의 경우 문자열로 표기, 한쌍의 속성-값 뒤에는 세미콜론이 아닌 콤마가 위치해야 함)
   const myStyle = {
-    fontWeight: 'bold',
-    color: '#b82514',
-    textDecoration: 'none',
-    marginRight: '10px'
+    fontWeight: "bold",
+    color: "#b82514",
+    textDecoration: "none",
+    marginRight: "10px",
   };
 
   return (
     <div>
+      <GlobalStyles />
       <h1 style={myStyle}>04-stylesheet</h1>
 
       <nav>
@@ -59,7 +64,7 @@ function App() {
           News(Demo)
         </NavLink>
       </nav>
-      <hr/>
+      <hr />
 
       <Routes>
         <Route path="/inline_css" element={<InlineCss />} />
@@ -71,7 +76,7 @@ function App() {
         <Route path="/news/*" element={<News />} />
       </Routes>
     </div>
-  )
+  );
 }
 
 export default App;

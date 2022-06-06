@@ -7,6 +7,7 @@ const MyCallback = () => {
   // 두번째 파라미터에 특정 state값을 지정할 경우 해당 값이 수정될 때만 이벤트 정의
   // --> 이벤트 핸들러의 중복 정의를 방지, 성능 up
   const onInputChange = React.useCallback((e) => {
+    console.log("hello");
     setMyText(e.currentTarget.value);
   }, []);
 

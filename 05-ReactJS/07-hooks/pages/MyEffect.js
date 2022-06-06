@@ -17,7 +17,6 @@ const MyEffect = () => {
 
   // 이 컴포넌트가 화면에 막 등장할 때와 state, props값이 변경될 때마다 매번 실행됨
   React.useEffect(() => {
-    console.clear();
     console.log(
       `[MyEffect2] ${new Date()} ::: 화면에 컴포넌트가 처음 로드되거나 state, props 중 하나라도 변경될 경우 호출됨`
     );

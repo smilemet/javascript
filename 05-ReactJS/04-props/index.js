@@ -3,11 +3,15 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import Meta from "./Meta";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    {/* Route 처리를 수행하는 페이지에서 이 컴포넌트 사용시, 모든 페이지에 공통 적용됨 */}
+    <Meta />
     <BrowserRouter>
-      <App/>
+      <App />
     </BrowserRouter>
   </React.StrictMode>
 );

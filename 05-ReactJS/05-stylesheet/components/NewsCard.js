@@ -1,9 +1,9 @@
 /**
  * 배열 데이터를 자체적으로 처리하는 경우
  */
-import React from 'react';
-import styled from 'styled-components';
-import NewsData from '../NewsData';
+import React from "react";
+import styled from "styled-components";
+import NewsData from "../NewsData";
 
 const CardContainer = styled.ul`
   list-style: none;
@@ -25,7 +25,7 @@ const CardContainer = styled.ul`
 
     .list-item-link {
       box-sizing: border-box;
-      width:100%;
+      width: 100%;
       display: flex;
       flex-wrap: nowrap;
       flex-direction: column;
@@ -91,7 +91,7 @@ const CardContainer = styled.ul`
             font-size: 12px;
 
             &:first-child::after {
-              content: '|';
+              content: "|";
               display: inline-block;
               color: #d5d5d5;
               padding: 0 5px;
@@ -100,9 +100,8 @@ const CardContainer = styled.ul`
         }
       }
     }
-
   }
-`
+`;
 
 const NewsCard = () => {
   console.clear();
@@ -110,12 +109,12 @@ const NewsCard = () => {
     <div>
       <CardContainer>
         {NewsData.map((v, i) => {
-          const {url, image, title, description, author, datetime} = v;
+          const { url, image, title, description, author, datetime } = v;
           return (
             <li className="card-item" key={i}>
-              <a className='list-item-link' href={url} target='_blank' rel='noreferrer'>
-                <img className='thumbnail' src={image} />
-                <div className='content'>
+              <a className="list-item-link" href={url} target="_blank" rel="noreferrer">
+                <img className="thumbnail" src={image} alt="thumbnail" />
+                <div className="content">
                   <h3>{title}</h3>
                   <p>{description}</p>
                   <ul>
