@@ -30,6 +30,8 @@ const BarChartView = memo(({ chartData }) => {
     },
   };
 
+  console.log(options);
+
   /** chart에 표시될 데이터 (막대그래프용) */
   const data = {
     // x축에 나타날 항목들
@@ -40,14 +42,14 @@ const BarChartView = memo(({ chartData }) => {
         label: "관람객 수",
         backgroundColor: "#0066ff44",
         borderColor: "#0066ff",
-        borderWindth: 1,
+        borderWidth: 1,
         // 그래프 각 항목별 y축 수치값
         data: chartData.audiCnt,
       },
     ],
   };
 
-  return <Bar data={data} options={options} />;
+  return <Bar options={options} data={data} />;
 });
 
 BarChartView.defaultProps = {

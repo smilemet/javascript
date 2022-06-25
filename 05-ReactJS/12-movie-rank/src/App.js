@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 
 import MenuLink from "./components/MenuLink";
 import MovieRank from "./pages/MovieRank";
-import Test from "./pages/Test";
 
 const App = () => {
   return (
@@ -11,12 +10,10 @@ const App = () => {
       <h1>Redux Toolkit</h1>
       <nav>
         <MenuLink to="/movie">MovieRank</MenuLink>
-        <MenuLink to="/test">test</MenuLink>
       </nav>
       <hr />
       <Routes>
         <Route path="/movie" element={<MovieRank />} />
-        <Route path="/test" element={<Test />} />
       </Routes>
     </div>
   );

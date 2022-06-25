@@ -1,0 +1,16 @@
+## 파일 무시
+*.exe
+*.pdf
+*.png
+*.zip
+*.7z
+
+
+## 폴더 무시
+midterm_test/
+실습/
+클론코딩/
+06-Database/
+
+
+
